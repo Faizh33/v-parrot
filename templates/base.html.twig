@@ -2,8 +2,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <title>{% block title %}Bienvenue!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -14,6 +21,60 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <!-- Navbar version mobile -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-danger d-md-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileNavbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mobileNavbarContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('used-car') }}">Occasions</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ml-auto">
+                <a href="{{ path('connexion') }}">
+                    <img src="{{ asset('svg/person-fill.svg') }}" alt="Person" class="navbar-person">
+                </a>
+                <a href="{{ path('contact') }}">
+                    <img src="{{ asset('svg/telephone-fill.svg') }}" alt="Telephone" class="navbar-telephone">
+                </a>
+            </div>
+        </nav>
+
+        <!-- Navbar version desktop -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-danger d-none d-md-flex">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('used-car') }}">Occasions</a>
+                </li>
+            </ul>
+            <a href="{{ path('connexion') }}">
+                <img src="{{ asset('svg/person-fill.svg') }}" alt="Person" class="navbar-person">
+            </a>
+            <a href="{{ path('contact') }}">
+                <img src="{{ asset('svg/telephone-fill.svg') }}" alt="Telephone" class="navbar-telephone">
+            </a>
+        </nav>
+
+        <!-- Titre principal -->
+        {% block h1 %} {% endblock %}
+        <!-- Contenu principal -->
+        <div>
+            {% block body %}{% endblock %}
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <!-- Mettez ici le contenu de votre footer -->
+        </footer>
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
