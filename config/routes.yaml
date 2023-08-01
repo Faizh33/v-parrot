@@ -1,3 +1,23 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+homepage:
+    path: /
+    controller: App\Controller\HomeController::index
+
+contact:
+  path: /contact
+  controller: App\Controller\ContactController::index
+
+connexion:
+  path: /connexion
+  controller: App\Controller\ConnexionController::index
+
+dashboard-employe:
+  path: /tableau-de-bord-employe
+
+dashboard-admin:
+  path: /tableau-de-bord-admin
+
+used-car:
+  path: /voitures-occasion
+
+used-car-description:
+  path: /voitures-occasion/details
