@@ -1,0 +1,20 @@
+/* style de la barre de navigation */
+.navbar {
+    background-color: #D92233;
+  }
+  
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: bold;
+}
+
+  .navbar-telephone {
+    margin-left: 2vw;
+    height: 35px;
+    width: 35px;
+  }
+
+  .navbar-person {
+    height: 45px;
+    width: 45px;
+  }
