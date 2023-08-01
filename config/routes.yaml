@@ -11,13 +11,13 @@ connexion:
   controller: App\Controller\ConnexionController::index
 
 dashboard-employe:
-  path: /tableau-de-bord-employe
+  path: /tableau-de-bord-employe::index
 
 dashboard-admin:
-  path: /tableau-de-bord-admin
+  path: /tableau-de-bord-admin::index
 
 used-car:
-  path: /voitures-occasion
+  path: /voitures-occasion::index
 
 used-car-description:
-  path: /voitures-occasion/details
+  path: /voitures-occasion/details::index
