@@ -5,6 +5,7 @@ Encore
   .setOutputPath('public/build/')
   .setPublicPath('/build')
   .addEntry('app', './public/js/app.js')
+  .addStyleEntry('home', './public/css/home.css')
   .enableSassLoader()
   .splitEntryChunks()
   .cleanupOutputBeforeBuild()
