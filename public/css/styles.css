@@ -8,13 +8,81 @@
   font-weight: bold;
 }
 
-  .navbar-telephone {
-    margin-left: 2vw;
-    height: 35px;
-    width: 35px;
+.nav-link {
+  margin-right: 2vw;
+}
+
+.navbar-telephone {
+  margin-left: 2vw;
+  height: 35px;
+  width: 35px;
+}
+
+.navbar-person {
+  height: 45px;
+  width: 45px;
+}
+
+/* style du pied-de-page */
+.footer {
+  color:white;
+}
+
+.openingTime {
+  font-weight:bold;
+}
+
+.openingTimeContainer {
+  list-style-type: none;
+}
+
+.openingTimeTitle {
+  font-size: 1.4vw;
+}
+
+.openingTimeText {
+  font-size: 1.2vw;
+}
+
+.logoFooterContainer {
+  margin: auto;
+}
+
+.logoFooter {
+  width: 18.57vw;
+  height: 7.2vw;
+}
+
+.legalNotice {
+  font-style: italic;
+  font-size: 1vw;
+  text-align: center;
+}
+
+@media screen and (min-width:700px) {
+  .openingTimeTitle {
+    font-size: 1.1vw;
+  }
+  
+  .openingTimeText {
+    font-size: 0.9vw;
   }
 
-  .navbar-person {
-    height: 45px;
-    width: 45px;
+  .legalNotice {
+    font-size: 0.8vw;
   }
+}
+
+@media screen and (min-width:1200px) {
+  .openingTimeTitle {
+    font-size: 1vw;
+  }
+  
+  .openingTimeText {
+    font-size: 0.8vw;
+  }
+
+  .legalNotice {
+    font-size: 0.7vw;
+  }
+}
