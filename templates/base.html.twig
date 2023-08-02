@@ -24,7 +24,7 @@
         <!-- Navbar version mobile -->
         <nav class="navbar navbar-expand-md navbar-dark bg-danger d-md-none">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileNavbarContent">
-                <span class="navbar-toggler-icon"></span>
+                <td class="navbar-toggler-icon"></td>
             </button>
             <div class="collapse navbar-collapse" id="mobileNavbarContent">
                 <ul class="navbar-nav mr-auto">
@@ -72,8 +72,48 @@
         </div>
 
         <!-- Footer -->
-        <footer>
-            <!-- Mettez ici le contenu de votre footer -->
+        <footer class="footer navbar-dark bg-danger">
+            <div class="row openingTime">
+                <div class="col-1"></div>
+                <div class="openingTimeContainer col-8">
+                    <table>
+                        <tr>
+                            <th colspan="2" class="openingTimeTitle">Horaires d'ouverture</th>
+                        </tr>
+                        <tr class="openingTimeText" class="openingTimeText">
+                            <td>lun.:</td>
+                            <td>08:45-12:00, 14:00-18:00</td>
+                        </tr>
+                        <tr class="openingTimeText">
+                            <td>mar.:</td>
+                            <td>08:45-12:00, 14:00-18:00</td>
+                        </tr>
+                        <tr class="openingTimeText">
+                            <td>mer.:</td>
+                            <td>08:45-12:00, 14:00-18:00</td>
+                        </tr>
+                        <tr class="openingTimeText">
+                            <td>jeu.:</td>
+                            <td>08:45-12:00, 14:00-18:00</td>
+                        </tr>
+                        <tr class="openingTimeText">
+                            <td>ven.:</td>
+                            <td>08:45-12:00, 14:00-18:00</td>
+                        </tr>
+                        <tr class="openingTimeText">
+                            <td>sam.:</td>
+                            <td>08:45-12:00</td>
+                        </tr>
+                        <tr class="openingTimeText">
+                            <td>dim.:</td>
+                            <td>Fermé</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="logoFooterContainer col-2"><img src="{{ asset('images/logo.png') }}" alt="logo" class="logoFooter"></div>
+                <div class="col-1"></div>
+            </div>
+            <div class="legalNotice">Site développé par Faizh33, 2023</div>
         </footer>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
