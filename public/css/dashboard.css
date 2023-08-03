@@ -1,40 +1,122 @@
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+@media screen and (min-height:830px){
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
 }
 
-.content {
-    flex: 1;
-    padding: 20px;
-}
-
+/* Style du dashboard */
 .dashboard-container {
+    margin-bottom: 15vw;
+    margin-top: 15vw;
+}
+
+.dashboard {
     width: 80%;
     background-color: #D9777F;
-    width: 50%;
+    width: 90%;
     margin: auto;
-    padding: 40px;
+    padding: 10px;
     margin-top: 3vw;
 }
 
 .dashboard-button {
     display: block;
-    border: 6px solid white;
+    border: 3px solid white;
     background-color: #D92332;
-    margin: 30px auto;
-    width: 80%;
+    margin: 10px auto;
+    width: 90%;
 }
 
 .dashboard-link, .dashboard-link:hover {
     color: white;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
+/*Style des boutons d'ouverture/fermeture du garage dashboard admin*/
+.opening-button-container {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.opening-button {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10vw;
+}
+
+.opening-button-1 {
+    background-color: green;
+    border: 1px solid green;
+    margin-right: 2vw;
+}
+
+.opening-button-2 {
+    background-color: #D92332;
+    border: 1px solid #D92332;
+}
+
+@media screen and (min-width:900px) {
+    .dashboard-container {
+        margin-bottom: 10vw;
+        margin-top: 5vw;
+    }
+    
+    .dashboard {
+        width: 60%;
+    }
+    
+    .dashboard-button {
+        margin: 20px auto;
+        width: 80%;
+    }
+    
+    .dashboard-link, .dashboard-link:hover {
+        font-size: 40px;
+    }
+
+    .opening-button {
+        font-size: 27.5px;
+        margin-bottom: 7.5vw;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .dashboard-container {
+        margin-bottom: 3vw;
+        margin-top: 1vw;
+    }
+    
+    .dashboard {
+        width: 50%;
+    }
+    
+    .dashboard-button {
+        margin: 20px auto;
+    }
+    
+    .dashboard-link, .dashboard-link:hover {
+        font-size: 45px;
+    }
+
+    .opening-button {
+        font-size: 35px;
+        margin-bottom: 5vw;
+    }
 }
