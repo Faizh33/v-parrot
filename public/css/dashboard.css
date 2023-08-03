@@ -1,0 +1,40 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.dashboard-container {
+    width: 80%;
+    background-color: #D9777F;
+    width: 50%;
+    margin: auto;
+    padding: 40px;
+    margin-top: 3vw;
+}
+
+.dashboard-button {
+    display: block;
+    border: 6px solid white;
+    background-color: #D92332;
+    margin: 30px auto;
+    width: 80%;
+}
+
+.dashboard-link, .dashboard-link:hover {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
