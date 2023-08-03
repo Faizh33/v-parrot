@@ -1,0 +1,24 @@
+.contact-form {
+    max-width: 70%;
+}
+
+@media screen and (min-width:700px) {
+    .contact-form {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .contact-form {
+        max-width: 30%;
+    }
+}
+
+input, textarea, .review-form {
+display: block;
+margin-bottom: 10px;
+}
+
+input[type="text"], textarea {
+width: 100%;
+}
