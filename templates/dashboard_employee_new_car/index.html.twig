@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle voiture{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/dashboardNewCar.css') }}">
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1 class="title">Nouvelle voiture</h1>
+    <form>
+        <div class="form-row">
+            <div class="col-md-5 mb-3">
+                <label class="label" for="brand">Marque</label>
+                <input type="text" class="form-control" id="brand" name="brand" required>
+            </div>
+            <div class="col-md-5 offset-md-2 mb-3">
+                <label class="label" for="model">Modèle</label>
+                <input type="text" class="form-control" id="model" name="model" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="price">Prix de vente</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" class="form-control flex-grow-1" id="price" name="price" required>
+                    <p class="label w-80 m-0 ml-2">€</p>
+                </div>
+            </div>
+            <div class="col-md-5 offset-md-2 mb-3">
+                <label class="label" for="intryIntoService">Mise en circulation</label>
+                <input type="date" class="form-control" id="intryIntoService" name="intryIntoService" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="milage">Kilométrage</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" class="form-control flex-grow-1" id="milage" name="milage" required>
+                    <p class="label w-80 m-0 ml-2">km</p>
+                </div>
+            </div>
+            <div class="col-md-5 offset-md-2 mb-3">
+                <label class="label" for="fuel">Carburant</label>
+                <input type="text" class="form-control" id="fuel" name="fuel" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="gearbox">Boîte de vitesse</label>
+                <select class="form-control" id="gearbox" name="gearbox">
+                    <option value="">--Choisir un type--</option>
+                    <option value="manuelle">Manuelle</option>
+                    <option value="automatique">Automatique</option>
+                    <option value="sequentielle">Séquentielle</option>
+                </select>
+            </div>
+            <div class="col-md-5 offset-md-2 mb-3">
+                <label class="label" for="license">Permis</label>
+                <select class="form-control" id="license" name="license">
+                    <option value="">--Choisir une option--</option>
+                    <option value="avec">Avec Permis</option>
+                    <option value="sans">Sans Permis</option>
+                </select>
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="color">Couleur</label>
+                <input type="text" class="form-control" id="color" name="color">
+            </div>
+            <div class="col-md-5 offset-md-2 mb-3">
+                <label class="label" for="doorsNb">Nombre de portes</label>
+                <input type="text" class="form-control" id="doorsNb" name="doorsNb">
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="seatNb">Nombre de places</label>
+                <input type="text" class="form-control" id="seatNb" name="seatNb">
+            </div>
+            <div class="col-md-5 offset-md-2 mb-3">
+                <label class="label" for="fiscalePower">Puissance fiscale</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" class="form-control" id="fiscalePower" name="fiscalePower">
+                    <p class="label w-80 m-0 ml-2">CV</p>
+                </div>
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="gearbox">Puissance DIN</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" class="form-control" id="gearbox" name="gearbox">
+                    <p class="label w-80 m-0 ml-2">ch</p>
+                </div>
+            </div>
+            <div class="col-md-5 offset-md-2 mb-3">
+                <label class="label" for="license">Consommation</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" class="form-control" id="license" name="license">
+                    <p class="label w-80 m-0 ml-2">L/100km</p>
+                </div>
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="crit-air">Crit'Air</label>
+                <select class="form-control" id="crit-air" name="crit-air">
+                    <option value="">--Choisir un niveau--</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="col-md-5 offset-md-2 mb-3">
+                <label class="label" for="options">Options</label>
+                <input type="text" class="form-control" id="options" name="options[]">
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="pictures">Photos</label>
+                <input type="text" class="form-control" id="pictures" name="pictures">
+            </div>
+            <div class="col-md-12 mb-3">
+                <label class="label" for="car-text">Texte de l'annonce</label>
+                <textarea class="form-control" id="car-text" name="car-text" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary mt-3 btn-custom">Envoyer</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

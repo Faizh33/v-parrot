@@ -1,0 +1,12 @@
+form {
+    max-width: 70%;
+    margin-top: 3vw;
+}
+
+.btn-custom, .btn-custom:hover {
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+    justify-content: center;
+    font-weight: bold;
+}
