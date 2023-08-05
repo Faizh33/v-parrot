@@ -10,11 +10,23 @@ connexion:
     path: /connexion
     controller: App\Controller\ConnexionController::index
 
-dashboard-employe:
+dashboard-employe-1:
     path: /tableau-de-bord-employe
     controller: App\Controller\DashboardEmployeeController::index
 
-dashboard-admin:
+dashboard-employe-2:
+    path: /tableau-de-bord-employe/nouvelle-voiture
+    controller: App\Controller\DashboardEmployeeNewCarController::index
+
+dashboard-employe-3:
+    path: /tableau-de-bord-employe/moderer-les-avis
+    controller: App\Controller\DashboardEmployeeReviewsController::index
+
+dashboard-employe-4:
+    path: /tableau-de-bord-employe/ajouter-un-avis
+    controller: App\Controller\DashboardEmployeeNewReviewController::index
+
+dashboard-admin-1:
     path: /tableau-de-bord-admin
     controller: App\Controller\DashboardAdminController::index
 
