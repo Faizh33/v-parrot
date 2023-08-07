@@ -1,0 +1,52 @@
+/* Style du lien pour créer un nouveau service */
+.link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vw;
+}
+
+.new-service-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.new-service-text {
+    color: #D94350;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.plus-circle {
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Style des containers des réparations proposées */
+.service-container {
+    max-width: 80%;
+    background-color: #D94350;
+    margin: auto;
+}
+
+.buttons-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+@media screen and (min-width:700px) {
+    .service-container {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .service-container {
+        max-width: 30%;
+    }
+}
