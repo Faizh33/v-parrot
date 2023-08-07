@@ -25,6 +25,7 @@ body {
 .subtitle {
   font-size: 40px;
   margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 p, button, label, a {
@@ -67,15 +68,21 @@ p, button, label, a {
 }
 
 .button {
-  color: white;
   font-weight: bold;
   background-color: black;
   border-radius: 10px;
+  color: white;
+  margin-top: 10px;
 }
 
 .home-button {
   height: 40px;
   font-size: 20px;
+}
+
+.link-button, .link-button:hover {
+  color: white;
+  text-decoration: none;
 }
 
 /* Style général des formulaires */
@@ -86,7 +93,7 @@ form {
   padding: 30px;
 }
 
-.label {
+.label, .box-title {
   color: white;
   font-weight: bold;
 }
@@ -97,13 +104,13 @@ input[type="text"], textarea {
   border-radius: 4px;
 }
 
-input[type="button"] {
+.form-button {
   margin: auto;
 }
 
 /* style du pied-de-page */
 .footer-container {
-  margin-top: 3vw;
+  margin-top: 5vw;
 }
 
 .footer {
@@ -165,14 +172,14 @@ input[type="button"] {
 
 @media screen and (min-width:1200px) {
   .openingTimeTitle {
-    font-size: 1vw;
+    font-size: 0.8vw;
   }
   
   .openingTimeText {
-    font-size: 0.8vw;
+    font-size: 0.6vw;
   }
 
   .legalNotice {
-    font-size: 0.7vw;
+    font-size: 0.5vw;
   }
 }

@@ -5,6 +5,7 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/newReview.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -15,12 +16,18 @@
     <h1 class="title">Bienvenue</h1>
     <p class="main-text">Votre garagiste est spécialisé dans les réparations de la carosserie et de la mécanique des voitures ainsi que leur entretien régulier pour garantir leur performance et leur sécurité.</p>
     <div class="button-container">
-        <button type="button" class="button home-button">Réservez un RDV</button>
+        <button type="button" class="button home-button">
+            <a href="{{ path('contact') }}" class="link-button">Réservez un RDV</a>
+        </button>
     </div>
     <h2 class="subtitle">Nos services</h2>
-    <div class="service-container">
-        <h3 class="service-title"></h3>
-        <p class="service-text"></p>
+    <div class="row">
+    {% for repair in repairs %}
+        <div class="col-md-3 service-container">
+            <h3 class="service-title box-title">{{ repair.title }}</h3>
+            <p class="service-text">{{ repair.description|nl2br|raw }}</p>
+        </div>
+    {% endfor %}
     </div>
     <h2 class="subtitle">Nos voitures d'occasion</h2>
     <div class="slider-container">
@@ -28,7 +35,9 @@
     </div>
     <p class="main-text">Jelly-o biscuit fruitcake bonbon gummies shortbread topping. Cheesecake chocolate bar tootsie roll wafer chupa chups. Cupcake tiramisu chocolate bar pudding gummi bears jelly beans jelly-o marshmallow. Tootsie roll bear claw tootsie roll tiramisu brownie powder. Brownie chupa chups carrot cake gummies lollipop candy. Dragée powder sesame snaps pudding powder cupcake pie.</p>
     <div class="button-container">
-        <button type="button" class="button  home-button">Voir tout</button>
+        <button type="button" class="button home-button">
+            <a href="{{ path('used-car') }}" class="link-button">Voir tout</a>
+        </button>
     </div>
     <h2 class="subtitle">Avis de nos clients</h2>
     <div class="review-container">
@@ -39,30 +48,9 @@
         <p class="review-name"></p>
     </div>
     <div class="button-container">
-        <button type="button" class="button home-button">Plus d'avis...</button>
+        <button type="button" class="button home-button">Voir plus d'avis...</button>
     </div>
     <h2 class="subtitle">Donnez votre avis !</h2>
-    <form action="" method="POST" class="review-form">
-        <label for="username" class="label">Nom</label>
-        <input type="text" id="username" name="username" required />
-        <label for="comment" class="label">Message</label>
-        <textarea id="comment" name="comment" rows="5" cols="33">Ecrivez votre commentaire.</textarea>
-        <p class="label">Note</p>
-        <div class="rating-form-container">
-            <div class="rating">
-                <input type="radio" id="star1" name="rating" value="1" />
-                <label for="star1"></label>
-                <input type="radio" id="star2" name="rating" value="2" />
-                <label for="star2"></label>
-                <input type="radio" id="star3" name="rating" value="3" />
-                <label for="star3"></label>
-                <input type="radio" id="star4" name="rating" value="4" />
-                <label for="star4"></label>
-                <input type="radio" id="star5" name="rating" value="5" />
-                <label for="star5"></label>
-            </div>
-        </div>
-        <input type="button" class="button form-button" value="Envoyer">
-    </form>
+    {% include 'snippets/review_form_snippet.html.twig' %}
 </div>
 {% endblock %}

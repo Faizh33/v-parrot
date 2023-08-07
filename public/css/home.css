@@ -16,67 +16,40 @@
     box-shadow: 0px 0px 10px #777;
   }
   
-  .slider {
-    width: 465%;
-    height: 0;
-    padding-top: 37.5%;
-    background-color: #EDEDED;
-    background-image: url("../images/diapo.png");
-    background-size: contain;
-    animation: defilement 15s linear infinite;
-  }
-  
-  @keyframes defilement{
-    0%{transform: translate(0,0);}
-    100%{transform: translate(-75%,0);}
-  }
-  
-  .slider:hover {
-    animation-play-state: paused;
-  }
-
-/* Style du formulaire des avis clients */
-.review-form {
-  max-width: 30%;
+.slider {
+  width: 465%;
+  height: 0;
+  padding-top: 37.5%;
+  background-color: #EDEDED;
+  background-image: url("../images/diapo.png");
+  background-size: contain;
+  animation: defilement 15s linear infinite;
 }
 
-input, textarea, .review-form {
-  display: block;
-  margin-bottom: 10px;
+@keyframes defilement{
+  0%{transform: translate(0,0);}
+  100%{transform: translate(-75%,0);}
 }
 
-input[type="text"], textarea {
+.slider:hover {
+  animation-play-state: paused;
+}
+
+/* Style des réparations */
+.row {
   width: 100%;
+  justify-content: center;
 }
 
-/* Style des étoiles de notation */
-.rating-form-container {
-  display: flex;
-  margin-bottom: 20px; 
-  padding-left: 20px;
+.service-container {
+  background-color: #D94350;
+  width: 90%;
+  margin: auto;
+  margin: 20px;
+  padding: 20px;
 }
 
-.rating {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.rating input {
-  display: none;
-}
-
-.rating label {
-  font-size: 30px;
+.service-text {
+  text-align: center;
   color: white;
-  cursor: pointer;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.rating label:before {
-  content: '\2605';
-}
-
-.rating input:checked ~ label {
-  color: #ffcc00;
 }

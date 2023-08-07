@@ -9,11 +9,11 @@
 
 {% block body %}
 <h1 class="title">Nouveau service</h1>
-<form class="new-service-form">
-    <label for ="title" class="label">Titre</label>
-    <input type="text" id="title" name="title" />
-    <label for ="description" class="label">Description</label>
-    <textarea id="description" name="description" rows="8"></textarea>
+{{ form_start(form, {'attr': {'class': 'new-service-form'}}) }}
+    {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.title, {'attr': {'id': 'title', 'name': 'title'}}) }}
+    {{ form_label(form.description, 'Description', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.description, {'attr': {'id': 'description', 'rows': '8'}}) }}    
     <input type="submit" class="button form-button" />
-</form>
+{{ form_end(form) }}
 {% endblock %}
