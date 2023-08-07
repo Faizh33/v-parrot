@@ -2,14 +2,26 @@
     max-width: 70%;
 }
 
+.address-box {
+    background-color: #D94350;
+    max-width: 70%;
+    margin: auto;
+}
+
+.address {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
 @media screen and (min-width:700px) {
-    .contact-form {
+    .contact-form, .address-box {
         max-width: 50%;
     }
 }
 
 @media screen and (min-width:1200px) {
-    .contact-form {
+    .contact-form, .address-box {
         max-width: 30%;
     }
 }
