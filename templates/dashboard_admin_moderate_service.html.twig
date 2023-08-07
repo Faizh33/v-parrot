@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modérer les services{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/moderateService.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1 class="title">Modérer les services</h1>
+<div class="link-container">
+    <a href="{{ path('dashboard-admin-4') }}" class="new-service-link">
+        <img src="{{ asset('svg/plus-circle.svg') }}" alt="Plus" class="plus-circle" />
+        <span class="new-service-text">Nouveau service</span>
+    </a>
+</div>
+<div class="service-container">
+    <p class="service-title"></p>
+    <p class="service-description"></p>
+    <div class="buttons-container">
+        <button type="button" class="button">Modifier</button>
+        <button type="button" class="button">Supprimer</button>
+    </div>
+</div>
+{% endblock %}
