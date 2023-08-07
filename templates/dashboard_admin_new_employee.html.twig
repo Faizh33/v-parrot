@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel(le) employé(e){% endblock %}
+
+{% block body %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/smallForm.css') }}">
+{% endblock %}
+
+<h1 class="title">Nouvel(le) employé(e)</h1>
+<form action="" method="POST" class="employee-form">
+    <label for="lastname" class="label">Nom</label>
+    <input type="text" id="lastname" name="lastname" />
+    <label for="firstname" class="label">Prénom</label>
+    <input type="text" id="firstname" name="firstname" />
+    <label for="email" class="label">Email</label>
+    <input type="text" id="email" name="email" />
+    <label for="password" class="label">Mot de passe</label>
+    <input type="text" id="password" name="password" />
+    <input type="submit" class="button form-button" value="Enregistrer" />
+</form>
+{% endblock %}
