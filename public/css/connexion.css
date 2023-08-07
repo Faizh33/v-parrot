@@ -1,0 +1,46 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.connexion-form {
+    max-width: 70%;
+    margin-top: 5vw;
+}
+
+input, .connexion-form {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+.form-button {
+    margin-top: 30px;
+}
+
+@media screen and (min-width:700px) {
+    .connexion-form {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .connexion-form {
+        max-width: 30%;
+    }
+}
