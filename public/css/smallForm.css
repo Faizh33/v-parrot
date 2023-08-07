@@ -17,15 +17,15 @@ body {
 
 form {
     max-width: 70%;
-    margin-top: 5vw;
+    margin-top: 4vw;
 }
 
-input, form {
+input, textarea, form {
     display: block;
     margin-bottom: 10px;
 }
 
-input[type="text"] {
+input[type="text"], textarea {
     width: 100%;
 }
 
