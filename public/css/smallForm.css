@@ -15,12 +15,12 @@ body {
     width: 100%;
 }
 
-.connexion-form {
+form {
     max-width: 70%;
     margin-top: 5vw;
 }
 
-input, .connexion-form {
+input, form {
     display: block;
     margin-bottom: 10px;
 }
@@ -34,13 +34,13 @@ input[type="text"] {
 }
 
 @media screen and (min-width:700px) {
-    .connexion-form {
+    form {
         max-width: 50%;
     }
 }
 
 @media screen and (min-width:1200px) {
-    .connexion-form {
+    form {
         max-width: 30%;
     }
 }
