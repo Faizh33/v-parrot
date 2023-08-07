@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel avis{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/newReview.css') }}">
+{% endblock %}
+
+{% block body %}
+<style>
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    .content { flex: 1; padding: 20px; }
+    .footer { position: fixed; bottom: 0; width: 100%; }
+</style>
+
+<h1 class="title">Ajouter un avis</h1>
+<br>
+{% include 'snippets/review_form_snippet.html.twig' %}
+{% endblock %}
