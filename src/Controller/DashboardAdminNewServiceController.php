@@ -29,6 +29,10 @@ class DashboardAdminNewServiceController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $description = $repair->getDescription();
+            $description = str_replace(["\r\n", "\r"], "\n", $description);
+            $repair->setDescription($description);
+            
             $this->entityManager->persist($repair);
             $this->entityManager->flush();
 
