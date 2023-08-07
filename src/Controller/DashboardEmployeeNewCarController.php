@@ -13,6 +13,6 @@ class DashboardEmployeeNewCarController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('dashboard_employee_new_car/index.html.twig');
+        return $this->render('dashboard_employee_new_car.html.twig');
     }
 }

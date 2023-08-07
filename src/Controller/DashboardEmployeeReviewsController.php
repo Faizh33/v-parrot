@@ -13,6 +13,6 @@ class DashboardEmployeeReviewsController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('dashboard_employee_reviews/index.html.twig');
+        return $this->render('dashboard_employee_reviews.html.twig');
     }
 }
