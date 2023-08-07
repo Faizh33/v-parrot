@@ -44,6 +44,10 @@ input[type="text"], textarea {
     color: #ffcc00;
 }
 
+.rating input:hover ~ label {
+    color: #ffcc00;
+}
+
 @media screen and (min-width: 700px) {
     .review-form {
         max-width: 50%;
