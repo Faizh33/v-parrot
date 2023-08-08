@@ -14,13 +14,20 @@
         <img src="{{ asset('svg/plus-circle.svg') }}" alt="Plus" class="plus-circle" />
         <span class="new-service-text">Nouveau service</span>
     </a>
-</div>
-<div class="service-container">
-    <p class="service-title"></p>
-    <p class="service-description"></p>
-    <div class="buttons-container">
-        <button type="button" class="button">Modifier</button>
-        <button type="button" class="button">Supprimer</button>
-    </div>
+</div> 
+<div class="row">
+    {% for repair in repairs %}
+        <div class="col-lg-3 col-md-4 col-8 service-container" data-repair-id="{{ repair.id }}">
+            <h3 class="service-title box-title">{{ repair.title }}</h3>
+            <input type="text" class="editInput" id="editTitle" name="title" placeholder="{{ repair.title }}" style="display:none;">
+            <p class="service-text">{{ repair.description|nl2br|raw }}</p>
+            <input type="text" class="editInput" id="editDescription" name="description" placeholder="{{ repair.description|nl2br|raw }}" style="display:none;">
+            <div class="buttons-container">
+                <button type="button" class="button edit-button">Modifier</button>
+                <button type="button" class="button save-button" style="display:none;">Sauvegarder</button>
+                <button type="button" class="button delete-button">Supprimer</button>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}
