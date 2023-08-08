@@ -34,22 +34,3 @@
 .slider:hover {
   animation-play-state: paused;
 }
-
-/* Style des réparations */
-.row {
-  width: 100%;
-  justify-content: center;
-}
-
-.service-container {
-  background-color: #D94350;
-  width: 90%;
-  margin: auto;
-  margin: 20px;
-  padding: 20px;
-}
-
-.service-text {
-  text-align: center;
-  color: white;
-}
