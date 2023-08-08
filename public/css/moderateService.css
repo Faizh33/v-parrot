@@ -28,25 +28,19 @@ a:hover {
 
 /* Style des containers des réparations proposées */
 .service-container {
-    max-width: 80%;
-    background-color: #D94350;
-    margin: auto;
+    position: relative;
+}
+
+.service-text {
+    padding-bottom: 20px;
 }
 
 .buttons-container {
-    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    display: flex;
     justify-content: space-around;
-}
-
-@media screen and (min-width:700px) {
-    .service-container {
-        max-width: 50%;
-    }
-}
-
-@media screen and (min-width:1200px) {
-    .service-container {
-        max-width: 30%;
-    }
+    padding: 10px 0;
 }
