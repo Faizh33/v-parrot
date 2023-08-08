@@ -9,15 +9,15 @@
 {% endblock %}
 
 <h1 class="title">Nouvel(le) employé(e)</h1>
-<form action="" method="POST" class="employee-form">
-    <label for="lastname" class="label">Nom</label>
-    <input type="text" id="lastname" name="lastname" />
-    <label for="firstname" class="label">Prénom</label>
-    <input type="text" id="firstname" name="firstname" />
-    <label for="email" class="label">Email</label>
-    <input type="text" id="email" name="email" />
-    <label for="password" class="label">Mot de passe</label>
-    <input type="text" id="password" name="password" />
+{{ form_start(form, {'attr': {'class': 'employee-form'}}) }}
+    {{ form_label(form.lastName, 'Nom', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.lastName, {'attr': {'id': 'lastName', 'name': 'lastName'}}) }}
+    {{ form_label(form.firstName, 'Prénom', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.firstName, {'attr': {'id': 'firstName', 'name': 'firstName'}}) }}
+    {{ form_label(form.email, 'Email', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.email, {'attr': {'id': 'email', 'name': 'email'}}) }}
+    {{ form_label(form.password, 'Mot de passe', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.password, {'attr': {'id': 'password', 'name': 'password'}}) }}
     <input type="submit" class="button form-button" value="Enregistrer" />
-</form>
+{{ form_end(form) }}
 {% endblock %}
