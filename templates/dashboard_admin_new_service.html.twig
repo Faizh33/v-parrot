@@ -11,9 +11,9 @@
 <h1 class="title">Nouveau service</h1>
 {{ form_start(form, {'attr': {'class': 'new-service-form'}}) }}
     {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'label'}}) }}
-    {{ form_widget(form.title, {'attr': {'id': 'title', 'name': 'title'}}) }}
+    {{ form_widget(form.title, {'attr': {'id': 'title', 'name': 'title', 'required': 'required'}}) }}
     {{ form_label(form.description, 'Description', {'label_attr': {'class': 'label'}}) }}
-    {{ form_widget(form.description, {'attr': {'id': 'description', 'rows': '8'}}) }}    
+    {{ form_widget(form.description, {'attr': {'id': 'description', 'rows': '8', 'required': 'required'}}) }}    
     <input type="submit" class="button form-button" />
 {{ form_end(form) }}
 {% endblock %}
