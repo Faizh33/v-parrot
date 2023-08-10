@@ -10,3 +10,9 @@ form {
     justify-content: center;
     font-weight: bold;
 }
+
+.option-button {
+    background-color: #D9777F;
+    border:none;
+    align-items: center;
+}
