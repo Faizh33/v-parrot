@@ -48,6 +48,11 @@ class Car
     private $milage;
 
     /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $fuel;
+
+    /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $gearbox;
@@ -93,16 +98,21 @@ class Car
     private $critAir;
 
     /**
-     * @ORM\OneToMany(targetEntity=CarOption::class, mappedBy="car")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $carOption;
+    private $description;
 
-    public function __construct()
-    {
-        $this->carOption = new ArrayCollection();
-    }
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $carOptions = [];
 
-    public function getId():?string
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $pictureNames = [];  
+
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -163,6 +173,18 @@ class Car
     public function setMilage(int $milage): self
     {
         $this->milage = $milage;
+
+        return $this;
+    }
+
+    public function getFuel(): ?string
+    {
+        return $this->fuel;
+    }
+
+    public function setFuel(string $fuel): self
+    {
+        $this->fuel = $fuel;
 
         return $this;
     }
@@ -275,31 +297,105 @@ class Car
         return $this;
     }
 
-    /**
-     * @return Collection|CarOption[]
-     */
-    public function getCarOptions(): Collection
+    public function getDescription(): ?string
     {
-        return $this->carOption;
+        return $this->description;
     }
 
-    public function addCarOption(CarOption $carOption): self
+    public function setDescription(?string $description): self
     {
-        if (!$this->carOption->contains($carOption)) {
-            $this->carOption[] = $carOption;
-            $carOption->setCar($this);
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCarOptions(): array
+    {
+        return $this->carOptions;
+    }
+
+    /**
+     * @param array $carOptions
+     * @return $this
+     */
+    public function setCarOptions(array $carOptions): self
+    {
+        $this->carOptions = $carOptions;
+
+        return $this;
+    }
+
+    /**
+     * @param string $carOption
+     * @return $this
+     */
+    public function addCarOption(string $carOption): self
+    {
+        if (!in_array($carOption, $this->carOptions, true)) {
+            $this->carOptions[] = $carOption;
         }
 
         return $this;
     }
 
-    public function removeCarOption(CarOption $carOption): self
+    /**
+     * @param string $carOption
+     * @return $this
+     */
+    public function removeCarOption(string $carOption): self
     {
-        if ($this->carOption->removeElement($carOption)) {
-            // Définir le propriétaire de la relation à null, cela dépend du cas d'utilisation
-            if ($carOption->getCar() === $this) {
-                $carOption->setCar(null);
-            }
+        $key = array_search($carOption, $this->carOptions, true);
+        if ($key !== false) {
+            unset($this->carOptions[$key]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPictureNames(): array
+    {
+        return $this->pictureNames;
+    }
+
+    /**
+     * @param array $pictureNames
+     * @return $this
+     */
+    public function setPictureNames(array $pictureNames): self
+    {
+        $this->pictureNames = $pictureNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pictureName
+     * @return $this
+     */
+    public function addPictureName(string $pictureName): self
+    {
+        if (!in_array($pictureName, $this->pictureNames, true)) {
+            $this->pictureNames[] = $pictureName;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $pictureName
+     * @return $this
+     */
+    public function removePictureName(string $pictureName): self
+    {
+        $key = array_search($pictureName, $this->pictureNames, true);
+        if ($key !== false) {
+            unset($this->pictureNames[$key]);
         }
 
         return $this;
