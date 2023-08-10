@@ -7,119 +7,148 @@
     <link rel="stylesheet" href="{{ asset('css/dashboardNewCar.css') }}">
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var addButton = document.getElementById('add-option-btn');
+        var optionsContainer = document.getElementById('options-container');
+
+        addButton.addEventListener('click', function () {
+            var index = optionsContainer.children.length;
+            var prototype = `{{ form_row(form.carOptions.vars.prototype)|raw }}`;
+            var newField = prototype.replace(/__name__/g, index);
+
+            var optionContainer = document.createElement('div');
+            optionContainer.innerHTML = newField;
+            optionsContainer.appendChild(optionContainer);
+        });
+    });
+    </script>
+{% endblock %}
+
 {% block body %}
 <div>
     <h1 class="title">Nouvelle voiture</h1>
-    <form>
-        <div class="form-row">
-            <div class="col-md-5 mb-3">
-                <label class="label" for="brand">Marque</label>
-                <input type="text" class="form-control" id="brand" name="brand" required>
-            </div>
-            <div class="col-md-5 offset-md-2 mb-3">
-                <label class="label" for="model">Modèle</label>
-                <input type="text" class="form-control" id="model" name="model" required>
+    {{ form_start(form, {'attr': {'class': 'new-car-form'}}) }}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_row(form.brand, {'label': 'Marque', 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control', 'required': 'required'}}) }}
             </div>
             <div class="col-md-5 mb-3">
-                <label class="label" for="price">Prix de vente</label>
+                {{ form_row(form.model, {'label': 'Modèle', 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control', 'required': 'required'}}) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_label(form.price, 'Prix de vente', {'label_attr': {'class': 'label'}}) }}
                 <div class="d-flex align-items-center">
-                    <input type="text" class="form-control flex-grow-1" id="price" name="price" required>
+                    {{ form_widget(form.price, {'attr': {'class': 'form-control flex-grow-1', 'required': 'required'}}) }}
                     <p class="label w-80 m-0 ml-2">€</p>
                 </div>
             </div>
-            <div class="col-md-5 offset-md-2 mb-3">
-                <label class="label" for="intryIntoService">Mise en circulation</label>
-                <input type="date" class="form-control" id="intryIntoService" name="intryIntoService" required>
-            </div>
             <div class="col-md-5 mb-3">
-                <label class="label" for="milage">Kilométrage</label>
+                {{ form_row(form.entryIntoService, {'label': 'Mise en circulation', 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control', 'required': 'required'}}) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_label(form.milage, 'Kilométrage', {'label_attr': {'class': 'label'}}) }}
                 <div class="d-flex align-items-center">
-                    <input type="text" class="form-control flex-grow-1" id="milage" name="milage" required>
+                    {{ form_widget(form.milage, {'attr': {'class': 'form-control'}}) }}
                     <p class="label w-80 m-0 ml-2">km</p>
                 </div>
             </div>
-            <div class="col-md-5 offset-md-2 mb-3">
-                <label class="label" for="fuel">Carburant</label>
-                <input type="text" class="form-control" id="fuel" name="fuel" required>
+            <div class="col-md-5 mb-3">
+                {{ form_row(form.fuel, {'label': 'Carburant', 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control', 'required': 'required'}}) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_label(form.gearbox, 'Boîte de vitesse', {'label_attr': {'class': 'label'}}) }}
+                {{ form_widget(form.gearbox, {'attr': {'class': 'form-control', 'id': 'gearbox', 'name': 'gearbox'}}) }}
             </div>
             <div class="col-md-5 mb-3">
-                <label class="label" for="gearbox">Boîte de vitesse</label>
-                <select class="form-control" id="gearbox" name="gearbox">
-                    <option value="">--Choisir un type--</option>
-                    <option value="manuelle">Manuelle</option>
-                    <option value="automatique">Automatique</option>
-                    <option value="sequentielle">Séquentielle</option>
-                </select>
+                {{ form_label(form.license, 'Permis', {'label_attr': {'class': 'label'}}) }}
+                {{ form_widget(form.license, {'attr': {'class': 'form-control', 'id': 'license', 'name': 'license'}}) }}
             </div>
-            <div class="col-md-5 offset-md-2 mb-3">
-                <label class="label" for="license">Permis</label>
-                <select class="form-control" id="license" name="license">
-                    <option value="">--Choisir une option--</option>
-                    <option value="avec">Avec Permis</option>
-                    <option value="sans">Sans Permis</option>
-                </select>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_row(form.color, {'label': 'Couleur', 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control'}}) }}
             </div>
             <div class="col-md-5 mb-3">
-                <label class="label" for="color">Couleur</label>
-                <input type="text" class="form-control" id="color" name="color">
+                {{ form_row(form.doorsNb, {'label': 'Nombre de portes', 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control'}}) }}
             </div>
-            <div class="col-md-5 offset-md-2 mb-3">
-                <label class="label" for="doorsNb">Nombre de portes</label>
-                <input type="text" class="form-control" id="doorsNb" name="doorsNb">
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_row(form.seatNb, {'label': 'Nombre de places', 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control'}}) }}
             </div>
             <div class="col-md-5 mb-3">
-                <label class="label" for="seatNb">Nombre de places</label>
-                <input type="text" class="form-control" id="seatNb" name="seatNb">
-            </div>
-            <div class="col-md-5 offset-md-2 mb-3">
-                <label class="label" for="fiscalePower">Puissance fiscale</label>
+                {{ form_label(form.fiscalPower, 'Puissance fiscale', {'label_attr': {'class': 'label'}}) }}
                 <div class="d-flex align-items-center">
-                    <input type="text" class="form-control" id="fiscalePower" name="fiscalePower">
+                    {{ form_widget(form.fiscalPower, {'attr': {'class': 'form-control'}}) }}
                     <p class="label w-80 m-0 ml-2">CV</p>
                 </div>
             </div>
-            <div class="col-md-5 mb-3">
-                <label class="label" for="gearbox">Puissance DIN</label>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_label(form.dinPower, 'Puissance DIN', {'label_attr': {'class': 'label'}}) }}
                 <div class="d-flex align-items-center">
-                    <input type="text" class="form-control" id="gearbox" name="gearbox">
-                    <p class="label w-80 m-0 ml-2">ch</p>
+                    {{ form_widget(form.dinPower, {'attr': {'class': 'form-control'}}) }}
+                    <p class="label w-80 m-0 ml-2">Ch</p>
                 </div>
             </div>
-            <div class="col-md-5 offset-md-2 mb-3">
-                <label class="label" for="license">Consommation</label>
+            <div class="col-md-5 mb-3">
+                {{ form_label(form.consumption, 'Consommation', {'label_attr': {'class': 'label'}}) }}
                 <div class="d-flex align-items-center">
-                    <input type="text" class="form-control" id="license" name="license">
+                    {{ form_widget(form.consumption, {'attr': {'class': 'form-control', 'required': 'required'}}) }}
                     <p class="label w-80 m-0 ml-2">L/100km</p>
                 </div>
             </div>
-            <div class="col-md-5 mb-3">
-                <label class="label" for="crit-air">Crit'Air</label>
-                <select class="form-control" id="crit-air" name="crit-air">
-                    <option value="">--Choisir un niveau--</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-            <div class="col-md-5 offset-md-2 mb-3">
-                <label class="label" for="options">Options</label>
-                <input type="text" class="form-control" id="options" name="options[]">
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_label(form.critAir, "Crit'Air", {'label_attr': {'class': 'label'}}) }}
+                {{ form_widget(form.critAir, {'attr': {'class': 'form-control', 'id': 'critAir', 'name': 'critAir'}}) }}
             </div>
             <div class="col-md-5 mb-3">
-                <label class="label" for="pictures">Photos</label>
-                <input type="text" class="form-control" id="pictures" name="pictures">
-            </div>
-            <div class="col-md-12 mb-3">
-                <label class="label" for="car-text">Texte de l'annonce</label>
-                <textarea class="form-control" id="car-text" name="car-text" rows="10"></textarea>
+                {{ form_row(form.carOptions, {'label': 'Options', 'label_attr': {'class': 'label'}}) }}
+                <div>
+                    <input type="text" id="new-option" name="new-option" placeholder="Nouvelle option">
+                    <button type="button" id="add-option-btn" class="option-button">
+                        <img src="{{ asset('svg/plus-circle-form.svg') }}" alt="Plus" class="plus-circle" />
+                    </button>
+                </div>
+                <div id="options-container">
+                    {% for optionForm in form.carOptions %}
+                        {{ form_row(optionForm, {'label': false}) }}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary mt-3 btn-custom">Envoyer</button>
+        <div class="row">
+            <div class="col-md-5 mb-3 mr-3">
+                {{ form_label(form.pictures, 'Photos', {'label_attr': {'class': 'label'}}) }}
+                {{ form_widget(form.pictures, {'attr': {'class': 'form-control', 'id': 'pictures', 'name': 'pictures'}}) }}
+            </div>
+            <div class="col-md-5 mb-3"></div>
         </div>
-    </form>
+        <div class="row">
+            <div class="col-md-10">
+                {{ form_row(form.description, {'label': "Texte de l'annonce", 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control', 'rows': '5'}}) }}
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 text-center">
+                <button type="submit" class="btn btn-primary mt-3 btn-custom">Envoyer</button>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
 </div>
+
 {% endblock %}
