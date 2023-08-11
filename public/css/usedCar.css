@@ -1,0 +1,55 @@
+.used-car-container {
+    width: 90%;
+    margin: auto;
+    background: #D94350;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+
+.picture {
+    width: 100%;
+    margin-bottom: 2vw;
+}
+
+.used-car-description {
+    margin-bottom: 5vw;
+}
+
+.text {
+    color: white;
+}
+
+.used-car-name {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.used-car-details {
+    padding-left: 5vw;
+}
+
+.form-button {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+}
+
+.button-container {
+    padding-bottom: 2vw;
+    margin-top: 3vw;
+}
+
+.button-link, .button-link:hover {
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    font-size: 24px;
+}
+
+@media screen and (min-width: 700px) {
+    .used-car-container {
+        width: 70%;
+    }
+}
