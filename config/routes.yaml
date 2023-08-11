@@ -47,5 +47,5 @@ used-car:
     controller: App\Controller\UsedCarController::index
 
 used-car-description:
-    path: /voitures-occasion/details
+    path: /voitures-occasion/{id}
     controller: App\Controller\UsedCarDescriptionController::index
