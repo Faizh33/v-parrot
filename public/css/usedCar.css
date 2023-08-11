@@ -1,9 +1,10 @@
+/* Style principal des pages de voitures d'occasion */
+
 .used-car-container {
     width: 90%;
     margin: auto;
     background: #D94350;
     margin-top: 3vw;
-    margin-bottom: 3vw;
 }
 
 .picture {
@@ -11,16 +12,12 @@
     margin-bottom: 2vw;
 }
 
-.used-car-description {
-    margin-bottom: 5vw;
-}
-
 .text {
     color: white;
 }
 
-.used-car-name {
-    font-size: 24px;
+.used-car-title {
+    font-size: 30px;
     text-align: center;
     font-weight: bold;
 }
@@ -52,4 +49,33 @@
     .used-car-container {
         width: 70%;
     }
+}
+
+/* Style de la page de description d'une voiture */
+.used-car-description {
+    padding-bottom: 3vw;
+}
+
+.used-car-description-table, .used-car-description-tr, .used-car-description-td {
+    border: none;
+}
+
+.used-car-description-table {
+    width: 50%;
+    margin: auto;
+    margin-top: 3vw;
+}
+
+.table-title {
+    font-weight: bold;
+    width: 50%;
+    text-align: end;
+    padding-right: 2vw;
+}
+
+.description-text {
+    padding-top: 3vw;
+    width: 80%;
+    text-align: center;
+    margin: auto;
 }
