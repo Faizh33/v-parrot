@@ -11,15 +11,15 @@
     {{ parent() }}
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var addButton = document.getElementById('add-option-btn');
-        var optionsContainer = document.getElementById('options-container');
+        const addButton = document.getElementById('add-option-btn');
+        const optionsContainer = document.getElementById('options-container');
 
         addButton.addEventListener('click', function () {
-            var index = optionsContainer.children.length;
-            var prototype = `{{ form_row(form.carOptions.vars.prototype)|raw }}`;
-            var newField = prototype.replace(/__name__/g, index);
+            let index = optionsContainer.children.length;
+            let prototype = `{{ form_row(form.carOptions.vars.prototype)|raw }}`;
+            let newField = prototype.replace(/__name__/g, index);
 
-            var optionContainer = document.createElement('div');
+            let optionContainer = document.createElement('div');
             optionContainer.innerHTML = newField;
             optionsContainer.appendChild(optionContainer);
         });
@@ -139,7 +139,7 @@
         </div>
         <div class="row">
             <div class="col-md-10">
-                {{ form_row(form.description, {'label': "Texte de l'annonce", 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control', 'rows': '5'}}) }}
+                {{ form_row(form.description, {'label': "Texte de l'annonce", 'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control', 'rows': '10'}}) }}
             </div>
         </div>
         <div class="row justify-content-center">
