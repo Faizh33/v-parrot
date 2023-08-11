@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Description de la voiture{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/usedCar.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1 class="title">{{ car.brand }} {{ car.model }}</h1>
+    <div class="used-car-container">
+        <div class="used-car-picture">
+            {% for pictureName in car.pictureNames %}
+                <img src="{{ asset('pictures/' ~ pictureName) }}" alt="photo" class="picture" />
+            {% endfor %}
+        </div>
+        <div class="used-car-description">
+            <p class="text used-car-title">{{ car.price }} €</p>
+            <table class="used-car-description-table">
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Mise en circulation</td>
+                    <td class="used-car-description-td">{{ car.entryIntoService|date('d/m/Y') }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Kilométrage</td>
+                    <td class="used-car-description-td">{{ car.milage }} km</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Carburant</td>
+                    <td class="used-car-description-td">{{ car.fuel }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Boîte de vitesse</td>
+                    <td class="used-car-description-td">{{ car.gearbox }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Permis</td>
+                    <td class="used-car-description-td">{{ car.license }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Couleur</td>
+                    <td class="used-car-description-td">{{ car.color }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Nombre de porte</td>
+                    <td class="used-car-description-td">{{ car.doorsNb }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Nombre de place</td>
+                    <td class="used-car-description-td">{{ car.seatNb }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Puissance fiscale</td>
+                    <td class="used-car-description-td">{{ car.fiscalPower }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Puissance DIN</td>
+                    <td class="used-car-description-td">{{ car.dinPower }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Consommation</td>
+                    <td class="used-car-description-td">{{ car.consumption }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Crit'Air</td>
+                    <td class="used-car-description-td">{{ car.critAir }}</td>
+                </tr>
+                <tr class="text used-car-description-tr">
+                    <td class="used-car-description-td table-title">Options</td>
+                    <td class="used-car-description-td">
+                        {% for option in car.carOptions %}
+                            <span>{{ option }}<br></span>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+            <p class="text description-text">{{ car.description}} </p>
+        </div>
+    </div>
+{% endblock %}
