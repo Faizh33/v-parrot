@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voitures d'occasion{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/usedCar.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1 class="title">Voitures d'occasion</h1>
+    <p class="main-text">Oat cake bear claw lollipop sweet caramels. Tart cake ice cream chocolate donut jelly beans. Tootsie roll candy canes liquorice pudding danish. Carrot cake sweet chocolate bar bonbon icing.</p>
+    {% for car in cars %}
+    <div class="used-car-container">
+        <div class="used-car-picture">
+            <img src="{{ asset('pictures/' ~ car.pictureNames[0]) }}" alt="photo" class="picture" />
+        </div>
+        <div class="used-car-description">
+            <p class="text used-car-name">{{ car.brand }} {{car.model}}</p>
+            <p class="text used-car-details">Mise en circulation : {{ car.entryIntoService|date('Y') }}</p>
+            <p class="text used-car-details">Année : {{ car.milage }} km</p>
+            <p class="text used-car-details">Carburant : {{ car.fuel }}</p>
+            <br>
+            <p class="text used-car-details">Prix : {{ car.price }} €</p>
+            <div class="button-container">
+                <button class="button form-button">
+                    <a href="{{ path('used-car-description', { 'id': car.id }) }}" class="button-link">Détails</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
