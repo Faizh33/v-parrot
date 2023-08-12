@@ -10,7 +10,7 @@
 {% block body %}
     <h1 class="title">Voitures d'occasion</h1>
     <p class="main-text">Oat cake bear claw lollipop sweet caramels. Tart cake ice cream chocolate donut jelly beans. Tootsie roll candy canes liquorice pudding danish. Carrot cake sweet chocolate bar bonbon icing.</p>
-    {% for car in cars %}
+    {% for car in pagination %}
     <div class="used-car-container">
         <div class="used-car-picture">
             <img src="{{ asset('pictures/' ~ car.pictureNames[0]) }}" alt="photo" class="picture" />
@@ -30,4 +30,7 @@
         </div>
     </div>
     {% endfor %}
+    <div class="pagination">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 {% endblock %}
