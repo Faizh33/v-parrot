@@ -1,5 +1,4 @@
 /* Style principal des pages de voitures d'occasion */
-
 .used-car-container {
     width: 90%;
     margin: auto;
@@ -26,6 +25,14 @@
     padding-left: 5vw;
 }
 
+
+@media screen and (min-width: 700px) {
+    .used-car-container {
+        width: 70%;
+    }
+}
+
+/* Style de la page de présentation des voitures d'occasion */
 .form-button {
     display: flex;
     justify-content: center;
@@ -45,11 +52,24 @@
     font-size: 24px;
 }
 
-@media screen and (min-width: 700px) {
-    .used-car-container {
-        width: 70%;
-    }
+.pagination {
+    justify-content: center;
+    margin-top: 0.5vw;
+    font-size: 1.7vw;
+    color: #D92233;
 }
+
+.pagination a {
+    color: #D92233;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.pagination a.prev,
+.pagination a.next {
+    color: #D92233;
+}
+
 
 /* Style de la page de description d'une voiture */
 .used-car-description {
