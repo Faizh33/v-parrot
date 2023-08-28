@@ -25,13 +25,6 @@
     padding-left: 5vw;
 }
 
-
-@media screen and (min-width: 700px) {
-    .used-car-container {
-        width: 70%;
-    }
-}
-
 /* Style de la page de présentation des voitures d'occasion */
 .form-button {
     display: flex;
@@ -55,7 +48,7 @@
 .pagination {
     justify-content: center;
     margin-top: 0.5vw;
-    font-size: 1.7vw;
+    font-size: 4vw;
     color: #D92233;
 }
 
@@ -123,4 +116,15 @@
 
 .arrow-right {
     right: 0;
+}
+
+
+@media screen and (min-width: 700px) {
+    .used-car-container {
+        width: 70%;
+    }
+
+    .pagination {
+        font-size: 1.7vw;
+    }
 }
