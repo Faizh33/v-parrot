@@ -26,12 +26,6 @@
 }
 
 /* Style de la page de présentation des voitures d'occasion */
-.return-button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 2vw;
-}
-
 .form-button {
     display: flex;
     justify-content: center;
@@ -42,13 +36,6 @@
 .button-container {
     padding-bottom: 2vw;
     margin-top: 3vw;
-}
-
-.button-link, .button-link:hover {
-    color: white;
-    text-decoration: none;
-    align-items: center;
-    font-size: 24px;
 }
 
 .pagination {
