@@ -8,6 +8,11 @@
 {% endblock %}
 
 {% block body %}
+<div class="return-button-container">
+    <button class="button return-button">
+        <a href="{{ path('dashboard-admin-1') }}" class="link-button">Retour</a>
+    </button>
+</div>
 <h1 class="title">Modérer les services</h1>
 <div class="link-container">
     <a href="{{ path('dashboard-admin-4') }}" class="new-service-link">
