@@ -1,8 +1,9 @@
-<form action="" method="POST" class="review-form">
-    <label for="username" class="label">Nom</label>
-    <input type="text" id="username" name="username" required />
-    <label for="comment" class="label">Message</label>
-    <textarea id="comment" name="comment" rows="5" cols="33">Ecrivez votre commentaire.</textarea>
+{{ form_start(form, {'attr': {'class': 'review-form'}}) }}
+    {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.name, {'attr': {'id': 'name', 'name': 'name', 'required': 'required'}}) }}
+    
+    {{ form_label(form.comment, 'Message', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.comment, {'attr': {'id': 'comment', 'rows': '5', 'cols': '33'}}) }}
     <p class="label">Note</p>
     <div class="rating-form-container">
         <div class="rating">
@@ -18,5 +19,5 @@
             <label for="star5"></label>
         </div>
     </div>
-    <input type="button" class="button form-button" value="Envoyer">
-</form>
+    <input type="submit" class="button form-button" value="Envoyer">
+{{ form_end(form) }}
