@@ -99,3 +99,28 @@
     text-align: center;
     margin: auto;
 }
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
