@@ -83,6 +83,14 @@ p, button, label, a {
 .link-button, .link-button:hover {
   color: white;
   text-decoration: none;
+  align-items: center;
+  font-size: 20px;
+}
+
+.return-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2vw;
 }
 
 /* Style général des formulaires */
