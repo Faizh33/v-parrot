@@ -27,6 +27,11 @@ class Review
      */
     private $comment;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $rate;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Review
     public function setComment(string $comment): self
     {
         $this->comment = $comment;
+
+        return $this;
+    }
+
+    public function getRate(): ?int
+    {
+        return $this->rate;
+    }
+
+    public function setRate(int $rate): self
+    {
+        $this->rate = $rate;
 
         return $this;
     }
