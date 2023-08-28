@@ -5,6 +5,12 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/usedCar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/displayedImage.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -12,7 +18,15 @@
     <div class="used-car-container">
         <div class="used-car-picture">
             {% for pictureName in car.pictureNames %}
-                <img src="{{ asset('pictures/' ~ pictureName) }}" alt="photo" class="picture" />
+                <div class="image-container">
+                    <img src="{{ asset('pictures/' ~ pictureName) }}" alt="photo" class="picture" />
+                    <div class="arrow arrow-left">
+                        <img src="{{ asset('svg/arrow-left.svg') }}" alt="fleche" class="arrow-left-img">
+                    </div>
+                    <div class="arrow arrow-right">
+                        <img src="{{ asset('svg/arrow-right.svg') }}" alt="fleche" class="arrow-right-img">
+                    </div>
+                </div>
             {% endfor %}
         </div>
         <div class="used-car-description">
@@ -75,7 +89,8 @@
                     </td>
                 </tr>
             </table>
-            <p class="text description-text">{{ car.description}} </p>
+            <p class="text description-text">{{ car.description|nl2br|raw }} </p>
         </div>
     </div>
+    {% include 'snippets/contact_snippet.html.twig' %}
 {% endblock %}
