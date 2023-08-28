@@ -29,6 +29,11 @@
 
 {% block body %}
 <div>
+    <div class="return-button-container">
+        <button class="button return-button">
+            <a href="{{ path('dashboard-employe-1') }}" class="link-button">Retour</a>
+        </button>
+    </div>
     <h1 class="title">Nouvelle voiture</h1>
     {{ form_start(form, {'attr': {'class': 'new-car-form'}}) }}
     <div class="container">
@@ -150,5 +155,4 @@
     </div>
     {{ form_end(form) }}
 </div>
-
 {% endblock %}
