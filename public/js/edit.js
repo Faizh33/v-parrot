@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
         editButton.addEventListener("click", function() {
             serviceContainer.classList.add("editing");
             titleInput.value = titleElement.textContent;
-            descriptionInput.value = descriptionElement.textContent;
+
+            const descriptionText = descriptionElement.innerHTML.replace(/<br\s*\/?>/g, '\n');
+            descriptionInput.value = descriptionText;
+
             titleElement.style.display = "none";
             descriptionElement.style.display = "none";
             titleInput.style.display = "inline-block";
@@ -27,18 +30,21 @@ document.addEventListener("DOMContentLoaded", function() {
             const newTitle = titleInput.value;
             const newDescription = descriptionInput.value;
 
+            const formattedDescription = newDescription.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+            const formattedTitle = newTitle.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
             fetch(`/update-repair/${repairId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ title: newTitle, description: newDescription })
+                body: JSON.stringify({ title: formattedTitle, description: formattedDescription })
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    titleElement.textContent = newTitle;
-                    descriptionElement.textContent = newDescription;
+                    titleElement.innerHTML = newTitle;
+                    descriptionElement.innerHTML = newDescription.replace(/\n/g, '<br>');
                     titleElement.style.display = "block";
                     descriptionElement.style.display = "block";
                     titleInput.style.display = "none";
