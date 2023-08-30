@@ -40,7 +40,8 @@ p, button, label, a {
   text-align: center;
 }
 
-/* style de la barre de navigation */
+
+/* Style de la barre de navigation */
 .navbar {
     background-color: #D92233;
   }
@@ -62,7 +63,8 @@ p, button, label, a {
   width: 45px;
 }
 
-/* style des boutons */
+
+/* Style des boutons */
 .button-container {
   text-align: center;
 }
@@ -94,7 +96,7 @@ p, button, label, a {
 }
 
 /* Style général des formulaires */
-form {
+.form {
   border: 1px solid #D9777F;
   margin: 0 auto;
   background-color: #D9777F;
@@ -116,6 +118,7 @@ input[type="text"], textarea {
   margin: auto;
 }
 
+
 /* Style des réparations */
 .row {
   width: 100%;
@@ -136,7 +139,48 @@ input[type="text"], textarea {
   font-size: 18px;
 }
 
-/* style du pied-de-page */
+
+/* Style des avis client */
+.review-container {
+  width: 80%;
+  background: #D94350;
+  margin: auto;
+  padding-top: 0.8vw;
+  padding-bottom: 0.1vw;
+  margin-bottom: 2vw;
+  max-height: 100%;
+}
+
+.rate {
+  padding-left: 1vw;
+  padding-bottom: 0.5vw;
+}
+
+.star {
+  font-size: 2vw;
+  color: yellow;
+}
+
+.yellow-star {
+  color: yellow;
+}
+
+.review-text {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 1vw;
+}
+
+.review-name {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2vw;
+}
+
+
+/* Style du pied-de-page */
 .footer-container {
   margin-top: 5vw;
 }
@@ -144,6 +188,7 @@ input[type="text"], textarea {
 .footer {
   color:white;
 }
+
 
 /* Style des horaires */
 .openingTime {
@@ -164,6 +209,7 @@ input[type="text"], textarea {
   font-size: 1.2vw;
 }
 
+
 /* Style du logo du pied-de-page */
 .logoFooterContainer {
   margin: auto;
@@ -175,6 +221,7 @@ input[type="text"], textarea {
   height: 7.7vw;
 }
 
+
 /* Style des mentions légales */
 .legalNotice {
   font-style: italic;
@@ -182,6 +229,7 @@ input[type="text"], textarea {
   text-align: center;
   padding-bottom: 1vw;
 }
+
 
 /* Style pour les écran de plus de 700px de largeur */
 @media screen and (min-width:700px) {
