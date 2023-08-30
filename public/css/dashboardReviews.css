@@ -1,0 +1,24 @@
+.buttons-container {
+    display:flex;
+    justify-content: space-around;
+    padding-bottom: 1vw;
+}
+
+@media screen and (min-height:630px){
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
