@@ -2,6 +2,11 @@
 
 {% block title %}Modérer les avis{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/dashboardReviews.css') }}">
+{% endblock %}
+
 {% block body %}
 <div class="return-button-container">
     <button class="button return-button">
@@ -9,4 +14,31 @@
     </button>
 </div>
 <h1 class="title">Modérer les avis</h1>
+<div class="row">
+        {% for review in reviews %}
+        <div class="col-lg-3 col-md-6 col-12">
+            <div class="review-container">
+                <div class="rate">
+                {% for i in 1..5 %}
+                    {% if i <= review.rate %}
+                        <span class="star yellow-star">★</span>
+                    {% else %}
+                        <span class="star">☆</span>
+                    {% endif %}
+                {% endfor %}
+                </div>
+                <p class="review-text">{{ review.comment }} </p>
+                <p class="review-name">{{ review.name }}</p>
+                <div class="buttons-container">
+                    <form method="post" action="{{ path('app_review_validate', {'id': review.id}) }}">
+                        <button type="submit" class="button valid-button">Valider</button>
+                    </form>
+                    <form method="post" action="{{ path('app_review_delete', {'id': review.id}) }}">
+                        <button type="submit" class="button delete-button">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
