@@ -14,7 +14,7 @@
     </button>
 </div>
 <h1 class="title">Nouveau service</h1>
-{{ form_start(form, {'attr': {'class': 'new-service-form'}}) }}
+{{ form_start(form, {'attr': {'class': 'form new-service-form'}}) }}
     {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'label'}}) }}
     {{ form_widget(form.title, {'attr': {'id': 'title', 'name': 'title', 'required': 'required'}}) }}
     {{ form_label(form.description, 'Description', {'label_attr': {'class': 'label'}}) }}
