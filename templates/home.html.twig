@@ -40,12 +40,24 @@
         </button>
     </div>
     <h2 class="subtitle">Avis de nos clients</h2>
-    <div class="review-container">
-        <div class="rating">
-            
+    <div class="row">
+        {% for review in reviews %}
+        <div class="col-4">
+            <div class="review-container">
+                <div class="rate">
+                {% for i in 1..5 %}
+                    {% if i <= review.rate %}
+                        <span class="star yellow-star">★</span>
+                    {% else %}
+                        <span class="star">☆</span>
+                    {% endif %}
+                {% endfor %}
+                </div>
+                <p class="review-text">{{ review.comment }} </p>
+                <p class="review-name">{{ review.name }}</p>
+            </div>
         </div>
-        <p class="review-text"></p>
-        <p class="review-name"></p>
+        {% endfor %}
     </div>
     <div class="button-container">
         <button type="button" class="button home-button">Voir plus d'avis...</button>
