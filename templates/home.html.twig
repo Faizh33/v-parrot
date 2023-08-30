@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ asset('css/newReview.css') }}">
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/loadReviews.js') }}"></script>
+{% endblock %}
+
 {% block body %}
 <div class="home-body">
     <div class="logo-container">
@@ -40,28 +45,30 @@
         </button>
     </div>
     <h2 class="subtitle">Avis de nos clients</h2>
-    <div class="row">
+    <div class="row review-container-wrapper">
+    <div id="reviews-container" class="row">
         {% for review in reviews %}
-        <div class="col-lg-3 col-md-6 col-12">
-            <div class="review-container">
-                <div class="rate">
-                {% for i in 1..5 %}
-                    {% if i <= review.rate %}
-                        <span class="star yellow-star">★</span>
-                    {% else %}
-                        <span class="star">☆</span>
-                    {% endif %}
-                {% endfor %}
+            <div class="col-lg-4 col-md-6 col-12 review-item">
+                <div class="review-container">
+                    <div class="rate">
+                        {% for i in 1..5 %}
+                            {% if i <= review.rate %}
+                                <span class="star yellow-star">★</span>
+                            {% else %}
+                                <span class="star">☆</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="review-text">{{ review.comment }}</p>
+                    <p class="review-name">{{ review.name }}</p>
                 </div>
-                <p class="review-text">{{ review.comment }} </p>
-                <p class="review-name">{{ review.name }}</p>
             </div>
-        </div>
         {% endfor %}
     </div>
     <div class="button-container">
-        <button type="button" class="button home-button">Voir plus d'avis...</button>
+        <button type="button" class="button home-button" id="load-more-button">Voir plus d'avis...</button>
     </div>
+</div>
     <h2 class="subtitle">Donnez votre avis !</h2>
     {% include 'snippets/review_form_snippet.html.twig' %}
 </div>
