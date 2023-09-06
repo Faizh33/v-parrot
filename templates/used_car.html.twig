@@ -7,21 +7,71 @@
     <link rel="stylesheet" href="{{ asset('css/usedCar.css') }}">
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/slider.js') }}"></script>
+    <script src="{{ asset('js/filterButton.js') }}"></script>
+{% endblock %}
+
 {% block body %}
     <h1 class="title">Voitures d'occasion</h1>
     <p class="main-text">Que vous soyez à la recherche d'une citadine, d'un cabriolet, d’une grande berline ou d'un SUV... Qu'il soit Diesel, Essence, Hybride ou Electrique... le garage V.Parrot vous propose un large choix d'annonces de véhicules d'occasion toutes marques. Nos voitures sont contrôlées, révisées et garanties par des professionnels de l'automobile.</p>
-    {% for car in pagination %}
+    <div class="filter">
+        <button id="toggleRangesButton" class="filter-button">
+            Filtrer
+        </button>
+        <img src="{{ asset('svg/filter-right.svg') }}" alt="Filtre" class="filter-button-svg d-md-none" />  
+    </div>
+    <div id="doubleRangeContainer" class="row">
+        <form class="col-md-3 col-12">
+            <div class="doubleRange milageRange">
+                <div class="barre">
+                    <div class="barreMilieu" style="width:100%;"></div>
+                    <div class="t1 thumb" style="left:0%" id="t1Milage"></div>
+                    <div class="t2 thumb" style="left:100%;" id="t2Milage"></div>
+                </div>
+                <div class="label">de <span id="minMilage" class="labelMin">{{ minMilage }}km</span> à <span id="maxMilage" class="labelMax">{{ maxMilage }}km</span></div>
+                <input type="hidden" name="pmin" value="" class="inputMin"/>
+                <input type="hidden" name="pmax" value="" class="inputMax"/>
+            </div>
+        </form>
+        <form class="col-md-3 col-12">
+            <div class="doubleRange priceRange">
+                <div class="barre">
+                    <div class="barreMilieu" style="width:100%;"></div>
+                    <div class="t1 thumb" style="left:0%" id="t1Price"></div>
+                    <div class="t2 thumb" style="left:100%" id="t2Price"></div>
+                </div>
+                <div class="label">de <span id="minPrice" class="labelMin">{{ minPrice }}€</span> à <span id="maxPrice" class="labelMax">{{ maxPrice }}€</span></div>
+                <input type="hidden" name="pmin" value="" class="inputMin"/>
+                <input type="hidden" name="pmax" value="" class="inputMax"/>
+            </div>
+        </form>
+        <form class="col-md-3 col-12">
+            <div class="doubleRange yearRange">
+                <div class="barre">
+                    <div class="barreMilieu" style="width:100%;"></div>
+                    <div class="t1 thumb" style="left:0%" id="t1Year"></div>
+                    <div class="t2 thumb" style="left:100%;" id="t2Year"></div>
+                </div>
+                <div class="label">de <span id="minYear" class="labelMin">{{ minYear }}</span> à <span id="maxYear" class="labelMax">{{ maxYear }}</span></div>
+                <input type="hidden" name="pmin" value="" class="inputMin"/>
+                <input type="hidden" name="pmax" value="" class="inputMax"/>
+            </div>
+        </form>
+    </div>
+    {% for car in cars %}
     <div class="used-car-container">
         <div class="used-car-picture">
             <img src="{{ asset('pictures/' ~ car.pictureNames[0]) }}" alt="photo" class="picture" />
         </div>
         <div class="used-car-description">
             <p class="text used-car-title">{{ car.brand }} {{car.model}}</p>
-            <p class="text used-car-details">Mise en circulation : {{ car.entryIntoService|date('Y') }}</p>
-            <p class="text used-car-details">Année : {{ car.milage }} km</p>
+            <p class="text used-car-details">Mise en circulation : <span class="year-value">{{ car.entryIntoService|date('Y') }}</span></p>
+            <p class="text used-car-details">Kilométrage : <span class="kilometer-value">{{ car.milage }}</span> km</p>
             <p class="text used-car-details">Carburant : {{ car.fuel }}</p>
             <br>
-            <p class="text used-car-details">Prix : {{ car.price }} €</p>
+            <p class="text used-car-details">Prix : <span class="price-value">{{ car.price }}</span> €</p>
             <div class="button-container">
                 <button class="button form-button">
                     <a href="{{ path('used-car-description', { 'id': car.id }) }}" class="link-button">Détails</a>
@@ -30,7 +80,40 @@
         </div>
     </div>
     {% endfor %}
-    <div class="pagination">
-        {{ knp_pagination_render(pagination) }}
-    </div>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+        var milageRange = document.querySelector('.milageRange');
+        var priceRange = document.querySelector('.priceRange');
+        var yearRange = document.querySelector('.yearRange');
+
+        setDoubleRange({
+            element: milageRange,
+            minValue: {{ minMilage }} - 2000,
+            maxValue: {{ maxMilage }} + 2000,
+            maxInfinite: false,
+            stepValue: 1000,
+            unite: 'km'
+        });
+
+        setDoubleRange({
+            element: priceRange,
+            minValue: {{ minPrice }},
+            maxValue: {{ maxPrice }},
+            maxInfinite: false,
+            stepValue: 10,
+            unite: '€'
+        });
+
+        setDoubleRange({
+            element: yearRange,
+            minValue: {{ minYear }},
+            maxValue: {{ maxYear }},
+            maxInfinite: false,
+            stepValue: 1,
+            unite: ''
+        });
+    });
+    </script>
+    <script src="{{ asset('js/usedCarFilter.js') }}"></script>
 {% endblock %}
