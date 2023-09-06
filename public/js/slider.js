@@ -14,10 +14,10 @@ function setDoubleRange(configDoubleRange) {
     const thumb1 = doubleRange.querySelector('.t1');
     const thumb2 = doubleRange.querySelector('.t2');
 
-    const draggable = false;
-    const targetToMove = false;
-    const largeurBarre = barre.scrollWidth;
-    const margeLeftBarre = barre.getBoundingClientRect().left;
+    let draggable = false;
+    let targetToMove = false;
+    let largeurBarre = barre.scrollWidth;
+    let margeLeftBarre = barre.getBoundingClientRect().left;
 
     // Gestion des événements pour les curseurs et le déplacement
     thumb1.addEventListener("mousedown", dragStart, false);
