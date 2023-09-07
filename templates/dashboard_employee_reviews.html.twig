@@ -15,7 +15,7 @@
 </div>
 <h1 class="title">Modérer les avis</h1>
 <div class="row">
-        {% for review in reviews %}
+        {% for review in pagination %}
         <div class="col-lg-4 col-md-6 col-12">
             <div class="review-container">
                 <div class="rate">
@@ -40,5 +40,8 @@
             </div>
         </div>
         {% endfor %}
+    </div>
+    <div class="pagination">
+        {{ knp_pagination_render(pagination) }}
     </div>
 {% endblock %}
