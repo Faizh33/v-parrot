@@ -22,8 +22,30 @@
     </div>
     <p class="main-text">Le garage est actuellement :</p>
     <div class="opening-button-container">
-        <button class="opening-button opening-button-1">OUVERT</button>
-        <button class="opening-button opening-button-2">FERMER</button>
+        <form method="POST" action="{{ path('app_dashboard_admin') }}">
+            {% if status is same as('ouvert') %}
+            <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:green;">
+                Ouvert
+            </button>
+            <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:grey;">
+                Fermer
+            </button>
+            {% elseif status is same as('fermé') %}
+            <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:grey;">
+                Ouvert
+            </button>
+            <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:red;">
+                Fermer
+            </button>
+            {% else %}
+            <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:green;">
+                Ouvert
+            </button>
+            <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:red;">
+                Fermer
+            </button>
+            {% endif %}
+        </form>
     </div>
 </div>
 {% endblock %}
