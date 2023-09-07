@@ -111,25 +111,6 @@
     margin-top: 3vw;
 }
 
-/*  Style de la pagination */
-.pagination {
-    justify-content: center;
-    margin-top: 0.5vw;
-    font-size: 4vw;
-    color: #D92233;
-}
-
-.pagination a {
-    color: #D92233;
-    margin: 0 5px;
-    font-weight: bold;
-}
-
-.pagination a.prev,
-.pagination a.next {
-    color: #D92233;
-}
-
 
 /* Style de la page de description d'une voiture */
 .used-car-description {
@@ -189,9 +170,5 @@
 @media screen and (min-width: 768px) {
     .used-car-container {
         width: 70%;
-    }
-
-    .pagination {
-        font-size: 1.7vw;
     }
 }

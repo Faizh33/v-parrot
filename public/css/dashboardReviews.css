@@ -4,21 +4,27 @@
     padding-bottom: 1vw;
 }
 
-@media screen and (min-height:630px){
-    body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
+/*  Style de la pagination */
+.pagination {
+    justify-content: center;
+    margin-top: 0.5vw;
+    font-size: 4vw;
+    color: #D92233;
+}
 
-    .content {
-        flex: 1;
-        padding: 20px;
-    }
+.pagination a {
+    color: #D92233;
+    margin: 0 5px;
+    font-weight: bold;
+}
 
-    .footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
+.pagination a.prev,
+.pagination a.next {
+    color: #D92233;
+}
+
+@media screen and (min-width: 768px) {
+    .pagination {
+        font-size: 1.7vw;
     }
 }

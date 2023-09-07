@@ -1,22 +1,3 @@
-@media screen and (min-height:830px){
-    body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .content {
-        flex: 1;
-        padding: 20px;
-    }
-
-    .footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-}
-
 /* Style du dashboard */
 .dashboard-container {
     margin-bottom: 15vw;
