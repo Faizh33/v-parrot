@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
 
 class DashboardEmployeeReviewsController extends AbstractController
 {
@@ -25,12 +26,20 @@ class DashboardEmployeeReviewsController extends AbstractController
     /**
      * @Route("/tableau-de-bord-employe/moderer-les-avis", name="app_dashboard_employee_reviews")
      */
-    public function index(): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
     {
-        $temporaryReviews = $this->temporaryReviewRepository->findAll();
+        $temporaryReviews = $this->temporaryReviewRepository->createQueryBuilder('tr')
+        ->getQuery();
+
+        $pagination = $paginator->paginate(
+            $temporaryReviews,
+            $request->query->getInt('page', 1),
+            6
+        );
 
         return $this->render('dashboard_employee_reviews.html.twig', [
             'reviews' => $temporaryReviews,
+            'pagination' => $pagination,
         ]);
     }
 
