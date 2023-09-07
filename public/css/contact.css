@@ -34,3 +34,7 @@ margin-bottom: 10px;
 input[type="text"], textarea {
 width: 100%;
 }
+
+span {
+    font-weight: bold;
+}
