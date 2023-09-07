@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Review;
 use App\Entity\TemporaryReview;
+use App\Entity\GarageState;
 use App\Form\TemporaryReviewType;
 use App\Repository\RepairRepository;
 use App\Repository\ReviewRepository;
 use App\Repository\TemporaryReviewRepository;
+use App\Repository\GarageStateRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -50,11 +52,14 @@ class HomeController extends AbstractController
 
         $repairs = $this->repairRepository->findAll();
         $reviews = $this->reviewRepository->findAll();
+        $repository = $this->entityManager->getRepository(GarageState::class);
+        $status = $repository->find(1)->getStatus();
 
         return $this->render('home.html.twig', [
             'repairs' => $repairs,
             'reviews' => $reviews,
             'form' => $form->createView(),
+            'status' => $status,
         ]);
     }
 }
