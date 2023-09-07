@@ -24,26 +24,32 @@
     <div class="opening-button-container">
         <form method="POST" action="{{ path('app_dashboard_admin') }}">
             {% if status is same as('ouvert') %}
-            <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:green;">
-                Ouvert
-            </button>
-            <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:grey;">
-                Fermer
-            </button>
+            <div class="opening-button-group">
+                <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:green;">
+                    Ouvert
+                </button>
+                <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:grey;">
+                    Fermer
+                </button>
+            </div>
             {% elseif status is same as('fermé') %}
-            <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:grey;">
-                Ouvert
-            </button>
-            <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:red;">
-                Fermer
-            </button>
+            <div class="opening-button-group">
+                <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:grey;">
+                    Ouvert
+                </button>
+                <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:#D92233;">
+                    Fermer
+                </button>
+            </div>
             {% else %}
-            <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:green;">
-                Ouvert
-            </button>
-            <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:red;">
-                Fermer
-            </button>
+            <div class="opening-button-group">
+                <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:green;">
+                    Ouvert
+                </button>
+                <button type="submit" name="fermer" class="opening-button opening-button-2" style="background-color:#D92233;">
+                    Fermer
+                </button>
+            </div>
             {% endif %}
         </form>
     </div>

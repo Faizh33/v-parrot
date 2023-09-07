@@ -28,26 +28,29 @@
     font-weight: bold;
 }
 
-/*Style des boutons d'ouverture/fermeture du garage dashboard admin*/
 .opening-button-container {
-    width: 100%;
+    text-align: center;
+}
+
+.opening-button-container {
+    text-align: center;
+}
+
+.opening-button-group {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .opening-button {
     color: white;
     font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10vw;
+    font-size: 40px;
+    margin-bottom: 2vw;
 }
 
-.opening-button-1 {
-    border: none;
-    margin-right: 2vw;
-}
-
-.opening-button-2 {
+.opening-button-1, .opening-button-2 {
     border: none;
 }
 
@@ -71,8 +74,13 @@
     }
 
     .opening-button {
-        font-size: 27.5px;
-        margin-bottom: 7.5vw;
+        margin-right: 1vw;
+        margin-left: 1vw;
+    }
+
+    .opening-button-group {
+        flex-direction: row;
+        justify-content: center;
     }
 }
 
@@ -92,10 +100,5 @@
     
     .dashboard-link, .dashboard-link:hover {
         font-size: 45px;
-    }
-
-    .opening-button {
-        font-size: 35px;
-        margin-bottom: 5vw;
     }
 }
