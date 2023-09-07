@@ -62,14 +62,12 @@
 }
 
 .opening-button-1 {
-    background-color: green;
-    border: 1px solid green;
+    border: none;
     margin-right: 2vw;
 }
 
 .opening-button-2 {
-    background-color: #D92332;
-    border: 1px solid #D92332;
+    border: none;
 }
 
 @media screen and (min-width:900px) {
