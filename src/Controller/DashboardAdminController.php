@@ -53,10 +53,10 @@ class DashboardAdminController extends AbstractController
 
     private function deleteOldGarageStates(): void
     {
-        // Obtenez le référentiel des anciennes données de GarageState
+        // Obtenir le référentiel des anciennes données de GarageState
         $garageStateRepository = $this->entityManager->getRepository(GarageState::class);
 
-        // Supprimez toutes les anciennes données
+        // Supprimer toutes les anciennes données
         $garageStateRepository->createQueryBuilder('g')
             ->delete()
             ->getQuery()
