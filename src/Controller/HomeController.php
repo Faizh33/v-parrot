@@ -41,6 +41,7 @@ class HomeController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $this->addFlash('success', 'Votre avis a été posté :)');
             $selectedRate = $request->request->get('rating');
             $temporaryReview->setRate($selectedRate);
 
