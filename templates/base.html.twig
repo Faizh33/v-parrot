@@ -34,6 +34,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('used-car') }}">Occasions</a>
                     </li>
+                    {% if app.user and 'ROLE_USER' in app.user.roles %}
+                    <li>
+                        <a class="nav-link" href="{{ path('dashboard-employe-1') }}">Employés</a>
+                    </li>
+                    {% endif %}
+                    {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+                    <li>
+                        <a class="nav-link" href="{{ path('dashboard-admin-1') }}">Administrateur</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="ml-auto">
@@ -55,6 +65,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('used-car') }}">Occasions</a>
                 </li>
+                {% if app.user and 'ROLE_USER' in app.user.roles %}
+                <li>
+                    <a class="nav-link" href="{{ path('dashboard-employe-1') }}">Employés</a>
+                </li>
+                {% endif %}
+                {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+                    <li>
+                        <a class="nav-link" href="{{ path('dashboard-admin-1') }}">Administrateur</a>
+                    </li>
+                {% endif %}
             </ul>
             <a href="{{ path('connexion') }}">
                 <img src="{{ asset('svg/person-fill.svg') }}" alt="Person" class="navbar-person">
