@@ -11,6 +11,15 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/loadReviews.js') }}"></script>
+    <script>
+    // Vérifie si un message flash est présent
+    {% if app.session.flashbag.peek('success') is not empty %}
+    window.addEventListener('load', function() {
+        document.getElementById('review-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    {% endif %}
+</script>
+
 {% endblock %}
 
 {% block body %}
@@ -81,5 +90,10 @@
 </div>
     <h2 class="subtitle">Donnez votre avis !</h2>
     {% include 'snippets/review_form_snippet.html.twig' %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+    <div class="alert alert-success">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
 </div>
 {% endblock %}
