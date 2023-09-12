@@ -34,3 +34,8 @@
 .slider:hover {
   animation-play-state: paused;
 }
+
+/* Style du message flash */
+.alert-success {
+  text-align: center;
+}
