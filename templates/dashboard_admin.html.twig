@@ -10,6 +10,11 @@
 {% block body %}
 <div class="content">
     <h1 class="title">TABLEAU DE BORD</h1>
+    <p class="main-text" style="font-weight:bold";>de 
+    {% if app.user %}
+        {{ app.user.firstName }} {{ app.user.lastName }}
+    {% endif %}
+    </p>
     <div class="dashboard-container">
         <div class="dashboard">
             <button class="dashboard-button">
