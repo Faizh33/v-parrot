@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Employé(e)s{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/dashboardEmployee.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="return-button-container">
+    <button class="button return-button">
+        <a href="{{ path('dashboard-admin-1') }}" class="link-button">Retour</a>
+    </button>
+</div>
+<h1 class="title">Liste des employé(e)s</h1>
+<div class="link-container">
+    <a href="{{ path('dashboard-admin-3') }}" class="new-employee-link">
+        <img src="{{ asset('svg/plus-circle.svg') }}" alt="Plus" class="plus-circle" />
+        <span class="new-employee-text">Nouvel(le) Employé(e)</span>
+    </a>
+</div> 
+<div>
+    <table class="employee-table">
+        <tr>
+            <th class="employee-th">Nom</th>
+            <th class="employee-th">Prénom</th>
+            <th class="employee-th">E-mail</th>
+            <th class="employee-th"></th>
+        </tr>
+    {% for user in users %}
+        <tr class="employee-container" data-user-id="{{ user.id }}">
+            <td class="employee-td employee-firstName">
+                <span class="edit-mode">{{ user.firstName }}</span>
+                <input type="text" class="editInput" id="editFirstName" style="display:none" value="{{ user.firstName }}" />
+            </td>
+            <td class="employee-td employee-lastName">
+                <span class="edit-mode">{{ user.lastName }}</span>
+                <input type="text" class="editInput" id="editLastName" style="display:none" value="{{ user.lastName }}" />
+            </td>
+            <td class="employee-td employee-email">
+                <span class="edit-mode">{{ user.email }}</span>
+                <input type="text" class="editInput" id="editEmail" style="display:none" value="{{ user.email }}" />
+            </td>
+            <td class="employee-td">
+                <button class="button edit-button">Modifier</button>
+                <button class="button save-button" style="display:none;">Valider</button>
+                {% if 'ROLE_ADMIN' in user.roles %}
+                    <button disabled class="delete-button" style="display:none;">Supprimer</button>
+                {% else %}
+                    <button class="button delete-button">Supprimer</button>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+<script src="{{ asset('js/moderateEmployee.js') }}"></script>
+{% endblock %}
