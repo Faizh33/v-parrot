@@ -8,7 +8,11 @@ contact:
 
 connexion:
     path: /connexion
-    controller: App\Controller\ConnexionController::index
+    controller: App\Controller\SecurityController::login
+
+deconnexion:
+    path: /deconnexion
+    controller: App\Controller\SecurityController::logout
 
 dashboard-employe-1:
     path: /tableau-de-bord-employe
@@ -31,14 +35,18 @@ dashboard-admin-1:
     controller: App\Controller\DashboardAdminController::index
 
 dashboard-admin-2:
+    path: /tableau-de-bord-admin/employes
+    controller: App\Controller\DashboardAdminEmployeeController::index
+
+dashboard-admin-3:
     path: /tableau-de-bord-admin/nouvel-employe
     controller: App\Controller\DashboardAdminNewEmployeeController::index
 
-dashboard-admin-3:
+dashboard-admin-4:
     path: /tableau-de-bord-admin/moderer-les-services
     controller: App\Controller\DashboardAdminModerateServiceController::index
 
-dashboard-admin-4:
+dashboard-admin-5:
     path: /tableau-de-bord-admin/nouveau-service
     controller: App\Controller\DashboardAdminNewServiceController::index
 
