@@ -1,17 +1,14 @@
 <h2 class="subtitle">Formulaire de contact</h2>
-<form class="form contact-form">
-    <label for="lastname" class="label">Nom</label>
-    <input type="text" id="lastname" name="lastname" required />
-    <label for="firstname" class="label">Prénom</label>
-    <input type="text" id="firstname" name="firstname" required />
-    <label for="email" class="label">Email</label>
-    <input type="text" id="email" name="email" required />
-    <label for="phone" class="label">Téléphone</label>
-    <input type="text" id="phone" name="phone" />
-    <label for="comment" class="label">Message</label>
-    <textarea id="comment" name="comment" rows="5" cols="33">Ecrivez votre message.</textarea>
-    <input type="button" class="button form-button" value="Envoyer" />
-</form>
+{{ form_start(form,  {'attr': {'class': 'form contact-form'}}) }}
+    {{ form_widget(form) }}
+    <input type="submit" class="button form-button" value="Envoyer" />
+{{ form_end(form) }}
+{% for flashMessage in app.session.flashbag.get('success') %}
+<div class="alert alert-success">
+    {{ flashMessage }}
+</div>
+{% endfor %}
+
 <h2 class="subtitle">Coordonnées</h2>
 <div class="address-box">
     <p class="address">53, rue Grande Fusterie 69500 BRON<br>
