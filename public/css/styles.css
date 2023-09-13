@@ -102,6 +102,7 @@ p, button, label, a {
   margin-right: 2vw;
 }
 
+
 /* Style général des formulaires */
 .form {
   border: 1px solid #D9777F;
@@ -203,6 +204,16 @@ input[type="text"], textarea {
 .col-lg-4.review-item.hidden {
   display: none;
 }
+
+
+/* Style des messages flash */
+.alert-success {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  margin-top: 1vw;
+}
+
 
 /* Style du pied-de-page */
 .footer-container {
