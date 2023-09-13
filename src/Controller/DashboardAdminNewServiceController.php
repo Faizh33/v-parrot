@@ -32,7 +32,7 @@ class DashboardAdminNewServiceController extends AbstractController
             $this->entityManager->persist($repair);
             $this->entityManager->flush();
 
-            return $this->redirectToRoute('dashboard-admin-3');
+            return $this->redirectToRoute('dashboard-admin-4');
         }
 
         return $this->render('dashboard_admin_new_service.html.twig', [
