@@ -1,0 +1,50 @@
+/* Style du lien pour créer un nouvel employé */
+.link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vw;
+}
+
+.new-employee-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.new-employee-text {
+    color: #D94350;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.plus-circle {
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Style du tableau */
+.employee-table {
+    margin: auto;
+    margin-top: 3vw;
+}
+
+.employee-th {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    background: #D92332;
+    color: white;
+    font-weight: bold;
+    height: 4vh;
+}
+
+.employee-td {
+    padding-bottom: 0.5vh;
+    padding-top: 0.5vh;
+    padding-left: 1.5vw;
+    font-weight: 500;
+}
+
