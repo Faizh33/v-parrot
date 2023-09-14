@@ -76,19 +76,29 @@ class UsedCarController extends AbstractController
      */
     public function deleteCar($id): JsonResponse
     {
-        $car = $this->entityManager->getRepository(Car::class)->find($id);
-
+        $carRepository = $this->getDoctrine()->getRepository(Car::class);
+        $car = $carRepository->find($id);
+    
         if (!$car) {
             return new JsonResponse(['success' => false, 'message' => 'Voiture non trouvée'], 404);
         }
-
+    
+        // Supprimer l'image associée à la voiture
+        $pictureNames = $car->getPictureNames();
+        foreach ($pictureNames as $imageName) {
+            $imagePath = $this->getParameter('pictures_directory') . '/' . $imageName;
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+    
         try {
             $this->entityManager->remove($car);
             $this->entityManager->flush();
-
+    
             return new JsonResponse(['success' => true], 200);
         } catch (\Exception $e) {
             return new JsonResponse(['success' => false, 'message' => 'Erreur de suppression de l\'utilisateur'], 500);
         }
     }
-}
+}   
