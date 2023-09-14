@@ -53,6 +53,8 @@ class ContactController extends AbstractController
         $this->addFlash('success', 'Votre message a été posté, nous vous répondrons dans les plus brefs délais. Bonne journée :)');
 
             return $this->redirectToRoute('contact');
+        } elseif ($form->isSubmitted() && !$form->isValid()) {
+            $this->addFlash('error', 'Il y a des erreurs dans le formulaire. Veuillez le corriger.');
         }
 
         $repository = $this->entityManager->getRepository(GarageState::class);

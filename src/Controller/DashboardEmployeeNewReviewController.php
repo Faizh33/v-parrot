@@ -39,7 +39,11 @@ class DashboardEmployeeNewReviewController extends AbstractController
             $this->entityManager->persist($review);
             $this->entityManager->flush();
 
-            return $this->redirectToRoute('homepage');
+            $this->addFlash('success', "L'avis a été enregistré avec succès.");
+
+            return $this->redirectToRoute('dashboard-employe-4');
+        } elseif ($form->isSubmitted() && !$form->isValid()) {
+            $this->addFlash('error', 'Il y a des erreurs dans le formulaire. Veuillez le corriger.');
         }
 
         $reviews = $this->reviewRepository->findAll();

@@ -41,14 +41,17 @@ class HomeController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->addFlash('success', 'Votre avis a été posté, il sera soumis à validation par nos équipes. Bonne journée :)');
             $selectedRate = $request->request->get('rating');
             $temporaryReview->setRate($selectedRate);
 
             $this->entityManager->persist($temporaryReview);
             $this->entityManager->flush();
 
+            $this->addFlash('success', 'Votre avis a été posté, il sera soumis à validation par nos équipes. Bonne journée :)');
+
             return $this->redirectToRoute('homepage');
+        } elseif ($form->isSubmitted() && !$form->isValid()) {
+            $this->addFlash('error', 'Il y a des erreurs dans le formulaire. Veuillez le corriger.');
         }
 
         $repairs = $this->repairRepository->findAll();

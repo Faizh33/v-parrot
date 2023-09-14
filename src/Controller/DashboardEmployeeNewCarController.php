@@ -56,7 +56,9 @@ class DashboardEmployeeNewCarController extends AbstractController
 
             // Ajouter un message flash et rediriger
             $this->addFlash('success', 'La nouvelle voiture a été enregistrée avec succès.');
-            return $this->redirectToRoute('dashboard-employe-1');
+            return $this->redirectToRoute('dashboard-employe-2');
+        } elseif ($form->isSubmitted() && !$form->isValid()) {
+            $this->addFlash('error', 'Il y a des erreurs dans le formulaire. Veuillez le corriger.');
         }
 
         return $this->render('dashboard_employee_new_car.html.twig', [

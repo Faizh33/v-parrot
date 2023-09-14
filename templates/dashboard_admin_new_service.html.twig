@@ -21,4 +21,16 @@
     {{ form_widget(form.description, {'attr': {'id': 'description', 'rows': '8', 'required': 'required'}}) }}    
     <input type="submit" class="button form-button" />
 {{ form_end(form) }}
+
+{% for flashMessage in app.session.flashbag.get('success') %}
+<div class="alert alert-success">
+    {{ flashMessage }}
+</div>
+{% endfor %}
+
+{% for flashError in app.session.flashbag.get('error') %}
+<div class="alert alert-danger">
+    {{ flashError }}
+</div>
+{% endfor %}
 {% endblock %}

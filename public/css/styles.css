@@ -216,8 +216,8 @@ input[type="text"], textarea {
 
 
 /* Style des messages flash */
-.alert-success {
-  width: 60%;
+.alert {
+  width: 50%;
   margin: auto;
   text-align: center;
   margin-top: 1vw;

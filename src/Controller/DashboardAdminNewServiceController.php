@@ -32,7 +32,11 @@ class DashboardAdminNewServiceController extends AbstractController
             $this->entityManager->persist($repair);
             $this->entityManager->flush();
 
-            return $this->redirectToRoute('dashboard-admin-4');
+            $this->addFlash('success', "Le service à été ajouté en base de données.");
+
+            return $this->redirectToRoute('dashboard-admin-5');
+        } elseif ($form->isSubmitted() && !$form->isValid()) {
+            $this->addFlash('error', 'Il y a des erreurs dans le formulaire. Veuillez le corriger.');
         }
 
         return $this->render('dashboard_admin_new_service.html.twig', [

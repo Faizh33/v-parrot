@@ -7,11 +7,13 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/smallForm.css') }}">
 {% endblock %}
+
 <div class="return-button-container">
     <button class="button return-button">
         <a href="{{ path('dashboard-admin-1') }}" class="link-button">Retour</a>
     </button>
 </div>
+
 <h1 class="title">Nouvel(le) employé(e)</h1>
 {{ form_start(form, {'attr': {'class': 'form employee-form'}}) }}
     {{ form_label(form.lastName, 'Nom', {'label_attr': {'class': 'label'}}) }}
@@ -24,4 +26,16 @@
     {{ form_widget(form.password, {'attr': {'id': 'password', 'name': 'password'}}) }}
     <input type="submit" class="button form-button" value="Enregistrer" />
 {{ form_end(form) }}
+
+{% for flashMessage in app.session.flashbag.get('success') %}
+<div class="alert alert-success">
+    {{ flashMessage }}
+</div>
+{% endfor %}
+
+{% for flashError in app.session.flashbag.get('error') %}
+<div class="alert alert-danger">
+    {{ flashError }}
+</div>
+{% endfor %}
 {% endblock %}

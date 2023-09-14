@@ -98,4 +98,15 @@
         </div>
     </div>
     {% include 'snippets/contact_snippet.html.twig' %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashError in app.session.flashbag.get('error') %}
+        <div class="alert alert-danger">
+            {{ flashError }}
+        </div>
+    {% endfor %}
 {% endblock %}

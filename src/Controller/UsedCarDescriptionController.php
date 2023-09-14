@@ -55,6 +55,8 @@ class UsedCarDescriptionController extends AbstractController
         $this->addFlash('success', 'Votre message a été posté, nous vous répondrons dans les plus brefs délais. Bonne journée :)');
 
             return $this->redirectToRoute('app_used_car_description');
+        } elseif ($form->isSubmitted() && !$form->isValid()) {
+            $this->addFlash('error', 'Il y a des erreurs dans le formulaire. Veuillez le corriger.');
         }
 
         return $this->render('used_car_description.html.twig', [
