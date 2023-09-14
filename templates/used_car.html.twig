@@ -11,6 +11,7 @@
     {{ parent() }}
     <script src="{{ asset('js/slider.js') }}"></script>
     <script src="{{ asset('js/filterButton.js') }}"></script>
+    <script src="{{ asset('js/deleteCar.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -61,21 +62,24 @@
         </form>
     </div>
     {% for car in cars %}
-    <div class="used-car-container">
+    <div class="used-car-container" data-car-id="{{ car.id }}">
         <div class="used-car-picture">
             <img src="{{ asset('pictures/' ~ car.pictureNames[0]) }}" alt="photo" class="picture" />
         </div>
         <div class="used-car-description">
             <p class="text used-car-title">{{ car.brand }} {{car.model}}</p>
-            <p class="text used-car-details">Mise en circulation : <span class="year-value">{{ car.entryIntoService|date('Y') }}</span></p>
-            <p class="text used-car-details">Kilométrage : <span class="kilometer-value">{{ car.milage }}</span> km</p>
-            <p class="text used-car-details">Carburant : {{ car.fuel }}</p>
+            <p class="text used-car-details"><b>Mise en circulation : </b><span class="year-value">{{ car.entryIntoService|date('Y') }}</span></p>
+            <p class="text used-car-details"><b>Kilométrage : </b><span class="kilometer-value">{{ car.milage }}</span> km</p>
+            <p class="text used-car-details"><b>Carburant : </b>{{ car.fuel }}</p>
             <br>
-            <p class="text used-car-details">Prix : <span class="price-value">{{ car.price }}</span> €</p>
+            <p class="text used-car-details"><b>Prix : </b><span class="price-value">{{ car.price }}</span> €</p>
             <div class="button-container">
                 <button class="button form-button">
                     <a href="{{ path('used-car-description', { 'id': car.id }) }}" class="link-button">Détails</a>
                 </button>
+                {% if app.user and 'ROLE_USER' in app.user.roles %}
+                    <button id="delete-button" class="button form-button">Supprimer</button>
+                {% endif %}
             </div>
         </div>
     </div>
