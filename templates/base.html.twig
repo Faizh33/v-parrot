@@ -24,24 +24,24 @@
         <!-- Navbar version mobile -->
         <nav class="navbar navbar-expand-md navbar-dark bg-danger d-md-none">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileNavbarContent">
-                <td class="navbar-toggler-icon"></td>
+                <img src="{{ asset('svg/list.svg') }}" alt="List" class="navbar-list">
             </button>
             <div class="collapse navbar-collapse" id="mobileNavbarContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
+                        <a class="nav-link text-white" href="{{ path('homepage') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('used-car') }}">Occasions</a>
+                        <a class="nav-link text-white" href="{{ path('used-car') }}">Occasions</a>
                     </li>
                     {% if app.user and 'ROLE_USER' in app.user.roles %}
                     <li>
-                        <a class="nav-link" href="{{ path('dashboard-employe-1') }}">Employés</a>
+                        <a class="nav-link text-white" href="{{ path('dashboard-employe-1') }}">Employés</a>
                     </li>
                     {% endif %}
                     {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
                     <li>
-                        <a class="nav-link" href="{{ path('dashboard-admin-1') }}">Administrateur</a>
+                        <a class="nav-link text-white" href="{{ path('dashboard-admin-1') }}">Administrateur</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -60,19 +60,19 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-danger d-none d-md-flex">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
+                    <a class="nav-link text-white" href="{{ path('homepage') }}">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('used-car') }}">Occasions</a>
+                    <a class="nav-link text-white" href="{{ path('used-car') }}">Occasions</a>
                 </li>
                 {% if app.user and 'ROLE_USER' in app.user.roles %}
                 <li>
-                    <a class="nav-link" href="{{ path('dashboard-employe-1') }}">Employés</a>
+                    <a class="nav-link text-white" href="{{ path('dashboard-employe-1') }}">Employés</a>
                 </li>
                 {% endif %}
                 {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
                     <li>
-                        <a class="nav-link" href="{{ path('dashboard-admin-1') }}">Administrateur</a>
+                        <a class="nav-link text-white" href="{{ path('dashboard-admin-1') }}">Administrateur</a>
                     </li>
                 {% endif %}
             </ul>
