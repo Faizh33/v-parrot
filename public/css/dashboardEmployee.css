@@ -30,6 +30,7 @@ a:hover {
 .employee-table {
     margin: auto;
     margin-top: 3vw;
+    width: 90%;
 }
 
 .employee-th {
@@ -48,3 +49,8 @@ a:hover {
     font-weight: 500;
 }
 
+@media screen and (min-width:900px) {
+    .employee-table {
+        width: 60%;
+    }
+}
