@@ -27,6 +27,7 @@
             <input type="text" class="editInput" id="editTitle" name="title" placeholder="{{ repair.title }}" style="display:none;">
             <p class="service-text">{{ repair.description|replace({'\n': '<br>'})|raw }}</p>
             <textarea class="editInput" id="editDescription" name="description" placeholder="{{ repair.description|raw }}" rows="4" style="display:none;width:100%;margin-top:1vw;">{{ repair.description }}</textarea>
+            <div class="separator"></div>
             <div class="buttons-container">
                 <button type="button" class="button edit-button">Modifier</button>
                 <button type="button" class="button save-button" style="display:none;">Sauvegarder</button>

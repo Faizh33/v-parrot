@@ -44,3 +44,7 @@ a:hover {
     justify-content: space-around;
     padding: 10px 0;
 }
+
+.separator {
+    margin-bottom: 30px;
+}
