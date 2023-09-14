@@ -35,6 +35,19 @@
         </button>
     </div>
     <h1 class="title">Nouvelle voiture</h1>
+    
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashError in app.session.flashbag.get('error') %}
+        <div class="alert alert-danger">
+            {{ flashError }}
+        </div>
+    {% endfor %}
+
     {{ form_start(form, {'attr': {'class': 'form new-car-form'}}) }}
     <div class="container">
         <div class="row">
@@ -155,17 +168,4 @@
     </div>
     {{ form_end(form) }}
 </div>
-
-{% for flashMessage in app.session.flashbag.get('success') %}
-<div class="alert alert-success">
-    {{ flashMessage }}
-</div>
-{% endfor %}
-
-{% for flashError in app.session.flashbag.get('error') %}
-<div class="alert alert-danger">
-    {{ flashError }}
-</div>
-{% endfor %}
-
 {% endblock %}
