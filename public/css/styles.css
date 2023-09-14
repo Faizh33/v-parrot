@@ -54,8 +54,14 @@ p, button, label, a {
   }
   
 .navbar-nav .nav-link {
-  color: #fff;
+  color: white;
   font-weight: bold;
+}
+
+.navbar-list {
+  height: 32px;
+  width: 32px;
+  color: white;
 }
 
 .navbar-telephone {
@@ -70,6 +76,9 @@ p, button, label, a {
   width: 45px;
 }
 
+.hidden {
+  display: none;
+}
 
 /* Style des boutons */
 .button-container {
