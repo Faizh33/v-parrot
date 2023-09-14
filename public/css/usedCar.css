@@ -109,8 +109,13 @@
 .button-container {
     padding-bottom: 2vw;
     margin-top: 3vw;
+    display:flex;
 }
 
+#delete-button {
+    align-items: center;
+    font-size: 20px;
+}
 
 /* Style de la page de description d'une voiture */
 .used-car-description {
