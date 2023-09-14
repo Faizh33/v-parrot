@@ -30,13 +30,13 @@
         </tr>
     {% for user in users %}
         <tr class="employee-container" data-user-id="{{ user.id }}">
-            <td class="employee-td employee-firstName">
-                <span class="edit-mode">{{ user.firstName }}</span>
-                <input type="text" class="editInput" id="editFirstName" style="display:none" value="{{ user.firstName }}" />
-            </td>
             <td class="employee-td employee-lastName">
                 <span class="edit-mode">{{ user.lastName }}</span>
-                <input type="text" class="editInput" id="editLastName" style="display:none" value="{{ user.lastName }}" />
+                <input type="text" class="editInput" id="editLastName" style="display:none" value="{{ user.firstName }}" />
+            </td>
+            <td class="employee-td employee-firstName">
+                <span class="edit-mode">{{ user.firstName }}</span>
+                <input type="text" class="editInput" id="editFirstName" style="display:none" value="{{ user.lastName }}" />
             </td>
             <td class="employee-td employee-email">
                 <span class="edit-mode">{{ user.email }}</span>
