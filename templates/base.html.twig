@@ -76,9 +76,14 @@
                     </li>
                 {% endif %}
             </ul>
-            <a href="{{ path('connexion') }}">
-                <img src="{{ asset('svg/person-fill.svg') }}" alt="Person" class="navbar-person">
-            </a>
+            <div class="profile-container">
+                <a href="{{ path('connexion') }}" id="profile-link">
+                    <img src="{{ asset('svg/person-fill.svg') }}" alt="Person" class="navbar-person" id="profile-image">
+                </a>
+            </div>
+            {% if app.user and 'ROLE_USER' in app.user.roles %}
+            <div id="logout-message" class="logout-message" style="display: none;">Déconnexion</div>
+            {% endif %}
             <a href="{{ path('contact') }}">
                 <img src="{{ asset('svg/telephone-fill.svg') }}" alt="Telephone" class="navbar-telephone">
             </a>

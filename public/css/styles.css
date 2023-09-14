@@ -80,6 +80,47 @@ p, button, label, a {
   display: none;
 }
 
+/* Style d'affichage de texte au survol du bouton d'accès à la page de connexion/deconnexion */
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.logout-message {
+  position: absolute;
+  bottom: -25px;
+  left: 78%;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  display: none;
+  z-index: 1;
+}
+
+@media screen and (min-width:900px) {
+  .logout-message {
+    left: 83%;
+  }
+}
+
+@media screen and (min-width:1050px) {
+  .logout-message {
+    left: 85%;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .logout-message {
+    left: 87%;
+  }
+}
+
+@media screen and (min-width:1400px) {
+  .logout-message {
+    left: 89%;
+  }
+}
+
 /* Style des boutons */
 .button-container {
   text-align: center;
