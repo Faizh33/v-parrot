@@ -7,6 +7,7 @@ use App\Repository\CarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -68,5 +69,26 @@ class UsedCarController extends AbstractController
             'minYear' => $minYear,
             'maxYear' => $maxYear,
         ]);
+    }
+    
+    /**
+     * @Route("/delete-car/{id}", name="delete_car", methods={"DELETE"})
+     */
+    public function deleteCar($id): JsonResponse
+    {
+        $car = $this->entityManager->getRepository(Car::class)->find($id);
+
+        if (!$car) {
+            return new JsonResponse(['success' => false, 'message' => 'Voiture non trouvée'], 404);
+        }
+
+        try {
+            $this->entityManager->remove($car);
+            $this->entityManager->flush();
+
+            return new JsonResponse(['success' => true], 200);
+        } catch (\Exception $e) {
+            return new JsonResponse(['success' => false, 'message' => 'Erreur de suppression de l\'utilisateur'], 500);
+        }
     }
 }
