@@ -9,7 +9,6 @@
 
 {% block body %}
     <h1 class="title">Contactez-nous</h1>
-    {% include 'snippets/contact_snippet.html.twig' %}
     <p class="main-text">
     Votre garage est actuellement 
     {% if status is same as('ouvert') %}
@@ -20,4 +19,5 @@
         <span style="color:black;">{{ status }}</span>
     {% endif %}
     </p>
+    {% include 'snippets/contact_snippet.html.twig' %}
 {% endblock %}
