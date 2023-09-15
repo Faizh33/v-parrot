@@ -3,19 +3,15 @@
     "app": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_bootstrap_dist_css_boots-bd9352.js",
         "/build/app.js"
-      ],
-      "css": [
-        "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_bootstrap_dist_css_boots-bd9352.css"
       ]
     },
-    "home": {
+    "styles": {
       "js": [
         "/build/runtime.js"
       ],
       "css": [
-        "/build/home.css"
+        "/build/styles.css"
       ]
     }
   }

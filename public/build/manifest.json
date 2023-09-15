@@ -1,8 +1,5 @@
 {
   "build/app.js": "/build/app.js",
-  "build/home.css": "/build/home.css",
-  "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_bootstrap_dist_css_boots-bd9352.css": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_bootstrap_dist_css_boots-bd9352.css",
-  "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_bootstrap_dist_css_boots-bd9352.js": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_bootstrap_dist_css_boots-bd9352.js",
-  "build/images/diapo.png": "/build/images/diapo.b1408ad3.png"
+  "build/styles.css": "/build/styles.css",
+  "build/runtime.js": "/build/runtime.js"
 }
