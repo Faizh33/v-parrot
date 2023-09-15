@@ -27,9 +27,9 @@ Un serveur de base de données compatible (MySQL, PostgreSQL, SQLite, etc.)
 *composer install*
 #### 4.Créez le fichier `.env` à la racine du projet et configurez les variables d'environnement nécessaires pour votre environnement de développement.
 #### 5.Créez la base de données et appliquez les migrations:
-Les données sont disponibles en mySQL dans le dossiers annexes
-/!\ Les mots de passe doivent être insérés dans le code MySQL, au niveau du INSERT INTO de la table User.
-*php bin/console doctrine:database:create*
+Les données sont disponibles en mySQL dans le dossiers annexes  
+/!\ Les mots de passe doivent être insérés dans le code MySQL, au niveau du INSERT INTO de la table User.  
+*php bin/console doctrine:database:create*  
 *php bin/console doctrine:migrations:migrate*
 #### 6.Démarrez le serveur de développement Symfony :
 *symfony server:start*
