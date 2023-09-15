@@ -1,13 +1,13 @@
 <h2 class="subtitle">Formulaire de contact</h2>
-{{ form_start(form,  {'attr': {'class': 'form contact-form'}}) }}
-    {{ form_widget(form) }}
-    <input type="submit" class="button form-button" value="Envoyer" />
-{{ form_end(form) }}
 {% for flashMessage in app.session.flashbag.get('success') %}
 <div class="alert alert-success">
     {{ flashMessage }}
 </div>
 {% endfor %}
+{{ form_start(form,  {'attr': {'class': 'form contact-form'}}) }}
+    {{ form_widget(form) }}
+    <input type="submit" class="button form-button" value="Envoyer" />
+{{ form_end(form) }}
 
 <h2 class="subtitle">Coordonnées</h2>
 <div class="address-box">
