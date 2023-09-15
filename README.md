@@ -4,13 +4,13 @@
 Vincent Parrot, fort de ses 15 années d'expérience dans la réparation automobile, a ouvert son propre garage à Toulouse en 2021. Depuis 2 ans, il propose une large gamme de services: réparation de la carrosserie et de la mécanique des voitures ainsi que leur entretien régulier pour garantir leur performance et leur sécurité. De plus, le Garage V. Parrot met en vente des véhicules d'occasion afin d'accroître son chiffre d'affaires. Vincent Parrot considère son atelier comme un véritable lieu de confiance pour ses clients et leurs voitures doivent, selon lui, à tout prix être entre de bonnes mains. Bien qu'il fournisse grâce à ses employés un service de qualité et personnalisé à chaque client, Vincent Parrot reconnaît qu'il doit être visible sur internet s'il veut se faire définitivement une place parmi la concurrence. 
 
 ### Fonctionnalités désirées
-Se connecter
-Présenter les services
-Définir les horaires d’ouverture
-Exposer les voitures d'occasion
-Filtrer la liste des véhicules d’occasion
-Permettre de contacter l'atelier
-Recueillir les témoignages des clients
+###### Se connecter
+###### Présenter les services
+###### Définir les horaires d’ouverture
+###### Exposer les voitures d'occasion
+###### Filtrer la liste des véhicules d’occasion
+###### Permettre de contacter l'atelier
+###### Recueillir les témoignages des clients
 
 ## Pré-requis
 PHP (version 7.4 ou supérieure)
