@@ -135,7 +135,10 @@
                     </div>
                     <div class="logoFooterContainer col-2"><img src="{{ asset('pictures/logo.png') }}" alt="logo" class="logoFooter"></div>
                 </div>
-                <div class="legalNotice">Site développé par Faizh33, 2023</div>
+                <div class="legalNotice">
+                    <span>Site développé par Faizh33, 2023</span>
+                    <span><a href={{ path('legal-notice') }}>Mentions légales</a></span>
+                </div>
             </footer>
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
