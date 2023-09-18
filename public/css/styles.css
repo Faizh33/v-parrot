@@ -35,6 +35,11 @@ body {
   margin-bottom: 20px;
 }
 
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
 p, button, label, a {
   font-family: 'Barlow', sans-serif;
 }
@@ -42,7 +47,7 @@ p, button, label, a {
 .main-text {
   font-size: 20px;
   width: 70%;
-  margin: auto;
+  margin: 0 auto;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -315,6 +320,12 @@ input[type="text"], textarea {
   padding-bottom: 1vw;
 }
 
+.legal-notice-link, .legal-notice-link:hover {
+  color: white;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+}
 
 /* Style pour les écran de plus de 700px de largeur */
 @media screen and (min-width:700px) {

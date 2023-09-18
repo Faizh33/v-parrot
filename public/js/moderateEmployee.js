@@ -19,6 +19,18 @@ document.addEventListener("DOMContentLoaded", function() {
             lastNameInput.value = lastNameElement.textContent;
             emailInput.value = emailElement.textContent;
 
+            firstNameInput.style.border = "1px solid #ccc";
+            lastNameInput.style.border = "1px solid #ccc";
+            emailInput.style.border = "1px solid #ccc";
+
+            // Vérifier si l'écran est en mode mobile
+            if (window.innerWidth <= 767) {
+                // Appliquer la taille des inputs pour mobile
+                firstNameInput.style.width = "13vw";
+                lastNameInput.style.width = "13vw";
+                emailInput.style.width = "26vw";
+            }
+
             firstNameElement.style.display = "none";
             lastNameElement.style.display = "none";
             emailElement.style.display = "none";
@@ -32,6 +44,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         saveButton.addEventListener("click", function() {
+            // Récupérer les nouvelles valeurs depuis les champs d'entrée
+            const newFirstName = firstNameInput.value;
+            const newLastName = lastNameInput.value;
+            const newEmail = emailInput.value;
+        
             fetch(`/update-user/${userId}`, {
                 method: "POST",
                 headers: {
@@ -52,15 +69,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     firstNameElement.textContent = newFirstName;
                     lastNameElement.textContent = newLastName;
                     emailElement.textContent = newEmail;
-
+        
                     firstNameElement.style.display = "inline-block";
                     lastNameElement.style.display = "inline-block";
                     emailElement.style.display = "inline-block";
-
+        
                     firstNameInput.style.display = "none";
                     lastNameInput.style.display = "none";
                     emailInput.style.display = "none";
-
+        
                     // Afficher le bouton "Modifier" à nouveau
                     editButton.style.display = "inline-block";
                     // Cacher le bouton "Valider"
@@ -70,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.error("Erreur lors de la mise à jour de l'employé dans la base de données");
                 }
             });
-        });
+        });        
 
         deleteButton.addEventListener("click", function() {
             fetch(`/delete-user/${userId}`, {
@@ -92,5 +109,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
         });
-    });password
+    });
 });
