@@ -53,7 +53,11 @@ dashboard-admin-5:
 used-car:
     path: /voitures-occasion
     controller: App\Controller\UsedCarController::index
-
+    
 used-car-description:
     path: /voitures-occasion/{id}
     controller: App\Controller\UsedCarDescriptionController::index
+
+legal-notice:
+    path: /mentions-legales
+    controller: App\Controller\LegalNoticeController::index
