@@ -29,3 +29,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+//Vérification lors de la soumission du formulaire d'avis (étoiles)
+document.getElementById('review-form').addEventListener('submit', function(event) {
+    const ratingRadios = document.querySelectorAll('#star-rating input[type="radio"]');
+    const isRatingSelected = false;
+
+    // Vérifiez si au moins un bouton est coché
+    for (let i = 0; i < ratingRadios.length; i++) {
+        if (ratingRadios[i].checked) {
+            isRatingSelected = true;
+            break;
+        }
+    }
+
+    // Si aucune note n'a été sélectionnée
+    if (!isRatingSelected) {
+        var errorContainer = document.querySelector('.error-message');
+        if (errorContainer) {
+            errorContainer.style.display = 'block';
+        }
+        event.preventDefault();
+    }
+});
