@@ -5,7 +5,7 @@
     {{ form_label(form.comment, 'Message', {'label_attr': {'class': 'label'}}) }}
     {{ form_widget(form.comment, {'attr': {'id': 'comment', 'rows': '5', 'cols': '33'}}) }}
     <p class="label">Note</p>
-    <div class="rating-form-container">
+    <div class="rating-form-container"  id="star-rating">
         <div class="rating">
             <input type="radio" id="star1" name="rating" value="5" />
             <label for="star1"></label>
@@ -21,3 +21,4 @@
     </div>
     <input type="submit" class="button form-button" value="Envoyer">
 {{ form_end(form) }}
+<div class="error-message" style="display: none;">Veuillez sélectionner une note.</div>
