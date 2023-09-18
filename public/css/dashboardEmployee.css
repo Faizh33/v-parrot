@@ -15,7 +15,7 @@
 .new-employee-text {
     color: #D94350;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .plus-circle {
@@ -30,7 +30,7 @@ a:hover {
 .employee-table {
     margin: auto;
     margin-top: 3vw;
-    width: 90%;
+    max-width: 95%;
 }
 
 .employee-th {
@@ -45,12 +45,22 @@ a:hover {
 .employee-td {
     padding-bottom: 0.5vh;
     padding-top: 0.5vh;
-    padding-left: 1.5vw;
+    padding-left: 2.5vw;
     font-weight: 500;
+    font-size: 12px;
 }
 
+
 @media screen and (min-width:900px) {
+    .new-employee-text {
+        font-size: 40px;
+    }
+
     .employee-table {
         width: 60%;
+    }
+
+    .employee-td {
+        font-size: 16px;
     }
 }
