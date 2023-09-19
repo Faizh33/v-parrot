@@ -23,7 +23,7 @@ class DashboardAdminEmployeeController extends AbstractController
     }
 
     /**
-     * @Route("/tableau-de-bord-admin/moderer-les-employes", name="app_dashboard_admin_employee")
+     * @Route("/tableau-de-bord-admin/moderer-les-employes", name="dashboard-admin-2")
      */
     public function index(): Response
     {

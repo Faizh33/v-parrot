@@ -23,7 +23,7 @@ class DashboardAdminModerateServiceController extends AbstractController
     }
 
     /**
-     * @Route("/tableau-de-bord-admin/moderer-les-services", name="app_dashboard_admin_moderate_service")
+     * @Route("/tableau-de-bord-admin/moderer-les-services", name="dashboard-admin-4")
      */
     public function index(): Response
     {

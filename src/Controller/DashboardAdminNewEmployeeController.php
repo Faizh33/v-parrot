@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 class DashboardAdminNewEmployeeController extends AbstractController
 {
     /**
-     * @Route("/tableau-de-bord-admin/nouvel-employe", name="app_dashboard_admin_new_employee")
+     * @Route("/tableau-de-bord-admin/nouvel-employe", name="dashboard-admin-3")
      */
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppCustomAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {        

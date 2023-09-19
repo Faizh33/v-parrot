@@ -20,7 +20,7 @@ class DashboardAdminNewServiceController extends AbstractController
     }
 
     /**
-     * @Route("/tableau-de-bord-admin/nouveau-service", name="app_dashboard_admin_new_service")
+     * @Route("/tableau-de-bord-admin/nouveau-service", name="dashboard-admin-5")
      */
     public function index(Request $request): Response
     {

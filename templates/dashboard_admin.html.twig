@@ -27,7 +27,7 @@
     </div>
     <p class="main-text">Le garage est actuellement :</p>
     <div class="opening-button-container">
-        <form method="POST" action="{{ path('app_dashboard_admin') }}">
+        <form method="POST" action="{{ path('dashboard-admin-1') }}">
             {% if status is same as('ouvert') %}
             <div class="opening-button-group">
                 <button type="submit" name="ouvert" class="opening-button opening-button-1" style="background-color:green;">

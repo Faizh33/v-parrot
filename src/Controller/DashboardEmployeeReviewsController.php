@@ -24,7 +24,7 @@ class DashboardEmployeeReviewsController extends AbstractController
     }
 
     /**
-     * @Route("/tableau-de-bord-employe/moderer-les-avis", name="app_dashboard_employee_reviews")
+     * @Route("/tableau-de-bord-employe/moderer-les-avis", name="dashboard-employee-3")
      */
     public function index(Request $request, PaginatorInterface $paginator): Response
     {
@@ -63,7 +63,7 @@ class DashboardEmployeeReviewsController extends AbstractController
         $this->entityManager->remove($review);
         $this->entityManager->flush();
 
-        return $this->redirectToRoute('app_dashboard_employee_reviews');
+        return $this->redirectToRoute('dashboard-employe-3');
     }
 
     /**
@@ -78,6 +78,6 @@ class DashboardEmployeeReviewsController extends AbstractController
             $this->entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_dashboard_employee_reviews');
+        return $this->redirectToRoute('dashboard-employe-3');
     }
 }

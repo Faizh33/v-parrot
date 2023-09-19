@@ -23,9 +23,9 @@ class UsedCarController extends AbstractController
     }
 
     /**
-     * @Route("/used-car", name="app_used_car")
+     * @Route("/used-car", name="used-car")
      */
-    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    public function index(EntityManagerInterface $entityManager): Response
     {
         $cars = $this->carRepository->findAll();
 
@@ -76,7 +76,7 @@ class UsedCarController extends AbstractController
      */
     public function deleteCar($id): JsonResponse
     {
-        $carRepository = $this->getDoctrine()->getRepository(Car::class);
+        $carRepository = $this->entityManager->getRepository(Car::class);
         $car = $carRepository->find($id);
     
         if (!$car) {
@@ -101,4 +101,4 @@ class UsedCarController extends AbstractController
             return new JsonResponse(['success' => false, 'message' => 'Erreur de suppression de l\'utilisateur'], 500);
         }
     }
-}   
+}

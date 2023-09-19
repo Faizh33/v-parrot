@@ -10,10 +10,6 @@ connexion:
     path: /connexion
     controller: App\Controller\SecurityController::login
 
-deconnexion:
-    path: /deconnexion
-    controller: App\Controller\SecurityController::logout
-
 dashboard-employe-1:
     path: /tableau-de-bord-employe
     controller: App\Controller\DashboardEmployeeController::index
@@ -38,7 +34,7 @@ dashboard-admin-2:
     path: /tableau-de-bord-admin/employes
     controller: App\Controller\DashboardAdminEmployeeController::index
 
-dashboard-admin-3:
+dashboard-admin-3: 
     path: /tableau-de-bord-admin/nouvel-employe
     controller: App\Controller\DashboardAdminNewEmployeeController::index
 

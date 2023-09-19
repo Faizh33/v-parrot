@@ -20,7 +20,7 @@ class DashboardAdminController extends AbstractController
     }
 
     /**
-     * @Route("/dashboard-admin-1", name="app_dashboard_admin")
+     * @Route("/dashboard-admin-1", name="dashboard-admin-1")
      */
     public function index(Request $request): Response
     {

@@ -23,7 +23,7 @@ class DashboardEmployeeNewReviewController extends AbstractController
     }
 
     /**
-     * @Route("/tableau-de-bord-employe/ajouter-un-avis", name="app_dashboard_employee_new_review")
+     * @Route("/tableau-de-bord-employe/ajouter-un-avis", name="dashboard-employe-4")
      */
     public function index(Request $request): Response
     {

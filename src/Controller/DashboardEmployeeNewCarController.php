@@ -21,7 +21,7 @@ class DashboardEmployeeNewCarController extends AbstractController
     }
 
     /**
-     * @Route("/tableau-de-bord-employe/nouvelle-voiture", name="app_dashboard_employee_new_car")
+     * @Route("/tableau-de-bord-employe/nouvelle-voiture", name="dashboard-employe-2")
      */
     public function index(Request $request): Response
     {
