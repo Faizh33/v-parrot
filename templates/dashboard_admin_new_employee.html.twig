@@ -16,15 +16,10 @@
 
 <h1 class="title">Nouvel(le) employé(e)</h1>
 {{ form_start(form, {'attr': {'class': 'form employee-form'}}) }}
-    {{ form_label(form.lastName, 'Nom', {'label_attr': {'class': 'label'}}) }}
-    {{ form_widget(form.lastName, {'attr': {'id': 'lastName', 'name': 'lastName'}}) }}
-    {{ form_label(form.firstName, 'Prénom', {'label_attr': {'class': 'label'}}) }}
-    {{ form_widget(form.firstName, {'attr': {'id': 'firstName', 'name': 'firstName'}}) }}
-    {{ form_label(form.email, 'Email', {'label_attr': {'class': 'label'}}) }}
-    {{ form_widget(form.email, {'attr': {'id': 'email', 'name': 'email'}}) }}
-    {{ form_label(form.password, 'Mot de passe', {'label_attr': {'class': 'label'}}) }}
-    {{ form_widget(form.password, {'attr': {'id': 'password', 'name': 'password'}}) }}
-    <input type="submit" class="button form-button" value="Enregistrer" />
+{% for field in form %}
+    {{ form_row(field) }}
+{% endfor %}
+<input type="submit" class="button form-button" value="Enregistrer" />
 {{ form_end(form) }}
 
 {% for flashMessage in app.session.flashbag.get('success') %}
