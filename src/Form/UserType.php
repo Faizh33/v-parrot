@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class UserType extends AbstractType
 {
@@ -25,8 +26,12 @@ class UserType extends AbstractType
                 'label_attr' => ['class' => 'label'],
                 'attr' => ['class' => 'form-control', 'id' => 'password', 'required' => 'required'],
             ])
-            ->add('firstName')
-            ->add('lastName')
+            ->add('firstName', TextType::class, [
+                'label' => 'Prénom',
+            ])
+            ->add('lastName', TextType::class, [
+                'label' => 'Nom',
+            ])
         ;
     }
 
