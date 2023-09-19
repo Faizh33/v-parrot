@@ -1,10 +1,10 @@
 //Comportement de la navbar en mode mobile
 document.addEventListener('DOMContentLoaded', function () {
-    var navbarToggler = document.querySelector('.navbar-toggler');
-    var iconsToHide = document.querySelectorAll('.navbar-person, .navbar-telephone');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const iconsToHide = document.querySelectorAll('.navbar-person, .navbar-telephone');
 
     navbarToggler.addEventListener('click', function () {
-        for (var i = 0; i < iconsToHide.length; i++) {
+        for (let i = 0; i < iconsToHide.length; i++) {
             iconsToHide[i].classList.toggle('hidden');
         }
     });
@@ -45,7 +45,7 @@ document.getElementById('review-form').addEventListener('submit', function(event
 
     // Si aucune note n'a été sélectionnée
     if (!isRatingSelected) {
-        var errorContainer = document.querySelector('.error-message');
+        const errorContainer = document.querySelector('.error-message');
         if (errorContainer) {
             errorContainer.style.display = 'block';
         }
