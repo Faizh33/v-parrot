@@ -17,7 +17,7 @@
 <h1 class="title">Nouvel(le) employé(e)</h1>
 {{ form_start(form, {'attr': {'class': 'form employee-form'}}) }}
 {% for field in form %}
-    {{ form_row(field, {'label_attr': {'class': 'label'}, 'attr': {'class': 'form-control'}}) }}
+    {{ form_row(field) }}
 {% endfor %}
 <input type="submit" class="button form-button" value="Enregistrer" />
 {{ form_end(form) }}

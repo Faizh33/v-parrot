@@ -28,9 +28,13 @@ class UserType extends AbstractType
             ])
             ->add('firstName', TextType::class, [
                 'label' => 'Prénom',
+                'label_attr' => ['class' => 'label'],
+                'attr' => ['class' => 'form-control', 'id' => 'firstName', 'required' => 'required'],
             ])
             ->add('lastName', TextType::class, [
                 'label' => 'Nom',
+                'label_attr' => ['class' => 'label'],
+                'attr' => ['class' => 'form-control', 'id' => 'lastName', 'required' => 'required'],
             ])
         ;
     }
