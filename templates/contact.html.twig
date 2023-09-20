@@ -12,11 +12,11 @@
     <p class="main-text">
     Votre garage est actuellement 
     {% if status is same as('ouvert') %}
-        <span style="color:rgb(12, 192, 12);">{{ status }}</span>
+        <span class="span-text" style="color:rgb(12, 192, 12);">{{ status }}</span>
     {% elseif status is same as('fermé') %}
-        <span style="color:#D92332;">{{ status }}</span>
+        <span class="span-text" style="color:#D92332;">{{ status }}</span>
     {% else %}
-        <span style="color:black;">{{ status }}</span>
+        <span class="span-text" style="color:black;">{{ status }}</span>
     {% endif %}
     </p>
     {% include 'snippets/contact_snippet.html.twig' %}
