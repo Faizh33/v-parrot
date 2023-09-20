@@ -35,6 +35,6 @@ input[type="text"], textarea {
 width: 100%;
 }
 
-span {
+.span-text {
     font-weight: bold;
 }
