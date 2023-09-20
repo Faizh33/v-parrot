@@ -36,7 +36,7 @@ dashboard-admin-2:
 
 dashboard-admin-3: 
     path: /tableau-de-bord-admin/nouvel-employe
-    controller: App\Controller\DashboardAdminNewEmployeeController::index
+    controller: App\Controller\DashboardAdminNewEmployeeController::register
 
 dashboard-admin-4:
     path: /tableau-de-bord-admin/moderer-les-services
