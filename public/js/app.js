@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Affichage d'un message au survol de l'icone de connexion/deconnexion
 document.addEventListener('DOMContentLoaded', function () {
-    // Sélectionnez l'élément de l'image et le message de déconnexion
+    // Sélectionner l'élément de l'image et le message de déconnexion
     const profileImage = document.getElementById('profile-image');
     const logoutMessage = document.getElementById('logout-message');
 
-    // Vérifiez si l'élément du message de déconnexion est présent dans le DOM (en fonction de la classe "desktop-only")
+    // Vérifier si l'élément du message de déconnexion est présent dans le DOM (en fonction de la classe "desktop-only")
     if (logoutMessage) {
-        // Ajoutez un gestionnaire d'événements pour le survol de l'image
+        // Ajouter un gestionnaire d'événements pour le survol de l'image
         profileImage.addEventListener('mouseover', () => {
             logoutMessage.style.display = 'block';
         });
 
-        // Ajoutez un gestionnaire d'événements pour le déplacement du curseur hors de l'image
+        // Ajouter un gestionnaire d'événements pour le déplacement du curseur hors de l'image
         profileImage.addEventListener('mouseout', () => {
             logoutMessage.style.display = 'none';
         });
@@ -35,7 +35,7 @@ document.getElementById('review-form').addEventListener('submit', function(event
     const ratingRadios = document.querySelectorAll('#star-rating input[type="radio"]');
     const isRatingSelected = false;
 
-    // Vérifiez si au moins un bouton est coché
+    // Vérifier si au moins un bouton est coché
     for (let i = 0; i < ratingRadios.length; i++) {
         if (ratingRadios[i].checked) {
             isRatingSelected = true;
