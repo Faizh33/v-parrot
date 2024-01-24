@@ -68,7 +68,7 @@ class UsedCarController extends AbstractController
             'maxMilage' => $maxMilage,
             'minYear' => $minYear,
             'maxYear' => $maxYear,
-        ]);
+        ]); 
     }
     
     /**
@@ -85,11 +85,15 @@ class UsedCarController extends AbstractController
     
         // Supprimer l'image associée à la voiture
         $pictureNames = $car->getPictureNames();
-        foreach ($pictureNames as $imageName) {
+        foreach ($pictureNames as $pictureName) {
+            $imageName = $pictureName->getPictureName();
             $imagePath = $this->getParameter('pictures_directory') . '/' . $imageName;
+            
             if (file_exists($imagePath)) {
                 unlink($imagePath);
-            }
+            }    
+            // Retirer l'entité PictureName de la collection
+            $car->removePictureNames($pictureName);
         }
     
         try {
