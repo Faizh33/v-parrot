@@ -23,13 +23,13 @@ class DashboardAdminNewEmployeeController extends AbstractController
          $form->handleRequest($request);
      
          if ($form->isSubmitted() && $form->isValid()) {
-             // Vérifiez si l'email existe déjà en base de données
+             // Vérifier si l'email existe déjà en base de données
              $existingUser = $entityManager->getRepository(User::class)->findOneBy(['email' => $employee->getEmail()]);
              if ($existingUser) {
-                 // Ajoutez un message d'erreur
+                 // Ajouter un message d'erreur
                  $this->addFlash('error', 'Cet email existe déjà en base de données.');
              } else {
-                 // Si l'email n'existe pas, continuez avec la persistance de l'utilisateur
+                 // Si l'email n'existe pas, continuer avec la persistance de l'utilisateur
                  $employee->setPassword(
                      $userPasswordHasher->hashPassword(
                          $employee,
