@@ -69,7 +69,7 @@ class DashboardEmployeeReviewsController extends AbstractController
     /**
      * @Route("/supprimer-avis/{id}", name="app_review_delete", methods={"POST"})
      */
-    public function deleteReview(Request $request, $id): Response
+    public function deleteReview(int $id): Response
     {
         $review = $this->temporaryReviewRepository->find($id);
 
