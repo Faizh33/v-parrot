@@ -46,7 +46,7 @@ class DashboardEmployeeReviewsController extends AbstractController
     /**
      * @Route("/valider-avis/{id}", name="app_review_validate", methods={"POST"})
      */
-    public function validateReview(Request $request, $id): Response
+    public function validateReview(int $id): Response
     {
         $review = $this->temporaryReviewRepository->find($id);
 
