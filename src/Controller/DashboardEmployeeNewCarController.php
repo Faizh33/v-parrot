@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Car;
+use App\Entity\CarOption;
+use App\Entity\PictureName;
 use App\Form\CarType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -39,14 +41,20 @@ class DashboardEmployeeNewCarController extends AbstractController
                         $this->getParameter('pictures_directory'),
                         $fileName
                     );
-                    // Ajouter le nom du fichier à l'entité Car
-                    $car->addPictureName($fileName);
+                    $pictureName = new PictureName();
+                    $pictureName->setPictureName($fileName);
+                    $pictureName->setCar($car);
+
+                    // Ajouter l'entité PictureName à la voiture
+                    $car->addPictureName($pictureName);
                 }
             }
 
             // Récupérer les options saisies dans le formulaire et les ajouter à l'entité Car
             $options = $form['carOptions']->getData();
             foreach ($options as $option) {
+                $carOption = new CarOption();
+                $carOption->setOption($option);
                 $car->addCarOption($option);
             }
 
