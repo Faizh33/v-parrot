@@ -28,17 +28,15 @@ class DashboardEmployeeReviewsController extends AbstractController
      */
     public function index(Request $request, PaginatorInterface $paginator): Response
     {
-        $temporaryReviews = $this->temporaryReviewRepository->createQueryBuilder('tr')
-        ->getQuery();
+        $query = $this->temporaryReviewRepository->createQueryBuilder('tr')->getQuery();
 
         $pagination = $paginator->paginate(
-            $temporaryReviews,
+            $query,
             $request->query->getInt('page', 1),
             6
         );
 
         return $this->render('dashboard_employee_reviews.html.twig', [
-            'reviews' => $temporaryReviews,
             'pagination' => $pagination,
         ]);
     }
