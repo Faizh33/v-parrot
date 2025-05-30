@@ -4,10 +4,14 @@
     {{ flashMessage }}
 </div>
 {% endfor %}
-{{ form_start(form,  {'attr': {'class': 'form contact-form'}}) }}
+{{ form_start(form, {'attr': {'class': 'form contact-form'}}) }}
     {{ form_widget(form) }}
-    <input type="submit" class="button form-button" value="Envoyer" />
+    
+    <div class="form-button-container">
+        <input type="submit" class="button form-button" value="Envoyer" />
+    </div>
 {{ form_end(form) }}
+
 
 <h2 class="subtitle">Coordonnées</h2>
 <div class="address-box">
