@@ -15,9 +15,7 @@
 
 {% block body %}
     <div class="return-button-container">
-        <button class="button return-button">
-            <a href="{{ path('used-car') }}" class="link-button">Retour à la liste</a>
-        </button>
+        <a href="{{ path('used-car') }}" class="button">Retour à la liste</a>
     </div>
     <h1 class="title">{{ car.brand }} {{ car.model }}</h1>
     <div class="used-car-container">
