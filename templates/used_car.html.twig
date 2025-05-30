@@ -74,11 +74,9 @@
             <br>
             <p class="text used-car-details"><b>Prix : </b><span class="price-value">{{ car.price }}</span> €</p>
             <div class="button-container">
-                <button class="button form-button">
-                    <a href="{{ path('used-car-description', { 'id': car.id }) }}" class="link-button">Détails</a>
-                </button>
+                <a href="{{ path('used-car-description', { 'id': car.id }) }}" class="button">Détails</a>
                 {% if app.user and 'ROLE_USER' in app.user.roles %}
-                    <button id="delete-button" class="button form-button">Supprimer</button>
+                    <a href="#" id="delete-button" class="button form-button">Supprimer</a>
                 {% endif %}
             </div>
         </div>
