@@ -128,27 +128,37 @@ p, button, label, a {
 
 /* Style des boutons */
 .button-container {
-  text-align: center;
+    padding-bottom: 2vw;
+    margin-top: 3vw;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* optionnel pour espacer les boutons */
 }
 
 .button {
-  font-weight: bold;
-  background-color: black;
-  border-radius: 10px;
-  color: white;
-  margin-top: 10px;
-}
-
-.home-button {
-  height: 40px;
-  font-size: 20px;
-}
-
-.link-button, .link-button:hover {
-  color: white;
+  display: inline-block;
+  background: linear-gradient(135deg, #000000, #333333);
+  color: #ffffff;
+  font-weight: 700;
   text-decoration: none;
-  align-items: center;
-  font-size: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #1a1a1a, #4d4d4d);
+  transform: scale(1.03);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.button:active {
+  transform: scale(0.98);
 }
 
 .return-button-container {
@@ -177,9 +187,17 @@ input[type="text"], textarea {
   border-radius: 4px;
 }
 
-.form-button {
-  margin: auto;
+.form-button-container {
+  text-align: center;
+  margin-top: 20px;
 }
+
+.form-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 
 
 /* Style des réparations */
