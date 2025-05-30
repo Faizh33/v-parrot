@@ -27,7 +27,7 @@
 
 /* Style de la page de présentation des voitures d'occasion */
 
-/* Style du slider */
+/* Style des filtres  */
 .filter {
     display: flex;
     justify-content: flex-end;
@@ -86,35 +86,12 @@
     -ms-user-select: none; 
 }
 
-.label {
-    font-size: 12px;
-}
-
 @media (max-width: 768px) {
     .doubleRange {
         display: block;
         margin: 0 auto;
         padding-bottom: 5px;
     }
-}
-
-/*  Style des boutons de details */
-.form-button {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-    height: 40px;
-}
-
-.button-container {
-    padding-bottom: 2vw;
-    margin-top: 3vw;
-    display:flex;
-}
-
-#delete-button {
-    align-items: center;
-    font-size: 20px;
 }
 
 /* Style de la page de description d'une voiture */
