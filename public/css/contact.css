@@ -1,11 +1,13 @@
 .contact-form {
     max-width: 70%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .address-box {
     background-color: #D94350;
     max-width: 70%;
     margin: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .address {
@@ -26,13 +28,13 @@
     }
 }
 
-input, textarea, .review-form {
-display: block;
-margin-bottom: 10px;
+input, textarea {
+    display: block;
+    margin-bottom: 10px;
 }
 
 input[type="text"], textarea {
-width: 100%;
+    width: 100%;
 }
 
 .span-text {
