@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block body %}
-<h1 class="title">Se connecter</h1>
+<h1 class="title login-title">Se connecter</h1>
 <form method="post" class="form connexion-form">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
