@@ -242,61 +242,45 @@ input[type="text"], textarea {
 
 /* Style des avis client */
 .review-container {
-  width: 80%;
-  background: #D94350;
-  margin: auto;
-  margin-top: 20px;
-  padding-top: 0.8vw;
-  padding-bottom: 0.1vw;
+  background-color: #f9f9f9;
+  border-left: 4px solid #D94350;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  min-height: 295px;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  justify-content: space-between;
 }
 
-.col-lg-4, .col-md-6 {
-  margin-bottom: 20px;
-}
-
-.rate {
-  padding-left: 1vw;
-  padding-bottom: 0.5vw;
-}
-
-.star {
-  font-size: 30px;
-  color: yellow;
-}
-
-.yellow-star {
-  color: yellow;
+.review-container:hover {
+  transform: translateY(-5px);
 }
 
 .review-text {
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  padding: 1vw;
-  flex-grow: 1;
-  overflow: auto;
+  font-style: italic;
+  font-weight: 600;
+  color: black;
+  margin: 10px 0;
 }
 
 .review-name {
-  color: white;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 2vw;
+  text-align: right;
+  font-weight: bold;
+  color: #D94350;
 }
 
-.row.review-container-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+.star {
+  font-size: 20px;
+  color: #ccc;
 }
 
-.col-lg-4.review-item.hidden {
-  display: none;
+.yellow-star {
+  color: #D94350; /* Utilise une teinte douce inspirée de ta palette */
 }
+
 
 
 /* Style des messages flash */
