@@ -28,3 +28,7 @@ input[type="text"], textarea {
         max-width: 30%;
     }
 }
+
+.login-title {
+    margin-bottom: 50px;
+}
