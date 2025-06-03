@@ -212,6 +212,7 @@ input[type="text"], textarea {
   margin: auto;
   margin: 20px;
   padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .service-text {
