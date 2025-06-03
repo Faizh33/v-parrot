@@ -1,6 +1,7 @@
 /* Style du formulaire des avis clients */
 .review-form {
     max-width: 80%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 input, textarea, .review-form {
