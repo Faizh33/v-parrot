@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('../pictures/garage-bg.jpg'); /* adapte le chemin */
+  background-image: url('../pictures/garage-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -28,7 +28,7 @@ body::before {
     width: 100%;
     height: 100%;
     background-color: white;
-    opacity: 0.8; /* ajustable selon la discrétion souhaitée */
+    opacity: 0.8;
     z-index: -1;
 }
 
@@ -49,7 +49,7 @@ body::before {
 
 .subtitle {
   font-size: 40px;
-  margin-top: 40px;
+  margin-top: 60px;
   margin-bottom: 20px;
 }
 
