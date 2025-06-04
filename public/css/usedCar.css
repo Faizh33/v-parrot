@@ -2,22 +2,27 @@
 .used-car-container {
     width: 90%;
     margin: auto;
-    background: #D94350;
+    background: linear-gradient(145deg, #c43d48, #D94350);
     margin-top: 3vw;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
 }
 
 .picture {
     width: 100%;
-    margin-bottom: 2vw;
 }
 
 .text {
     color: white;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
 .used-car-title {
-    font-size: 30px;
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     text-align: center;
     font-weight: bold;
 }
@@ -149,9 +154,15 @@
     right: 0;
 }
 
-
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .used-car-container {
-        width: 70%;
+        flex-direction: row;
+        align-items:center;
+    }
+    .used-car-picture, .used-car-description {
+        width: 50%;
+    }
+    .used-car-description {
+        padding: 20px;
     }
 }
