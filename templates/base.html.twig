@@ -11,8 +11,10 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+        <link rel="icon" href="{{ asset('pictures/favicon.ico') }}" />
+
         <title>{% block title %}Bienvenue!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('styles') }}
         {% endblock %}
@@ -137,7 +139,7 @@
                     <div class="logoFooterContainer col-2"><img src="{{ asset('pictures/logo2.png') }}" alt="logo" class="logoFooter"></div>
                 </div>
                 <div class="legalNotice">
-                    <span>Site développé par Faizh33, 2023</span>
+                    <span>Site développé par <a href="https://erikaredon.fr" class="legal-notice-link">Erika REDON</a>, 2025</span>
                     <span><a href={{ path('legal-notice') }} class="legal-notice-link">Mentions légales</a></span>
                 </div>
             </footer>
