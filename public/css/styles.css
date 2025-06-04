@@ -314,11 +314,11 @@ input[type="text"], textarea {
 }
 
 .openingTimeTitle {
-  font-size: 1.4vw;
+  font-size: 3vw;
 }
 
 .openingTimeText {
-  font-size: 1.2vw;
+  font-size: 2vw;
 }
 
 
@@ -337,26 +337,33 @@ input[type="text"], textarea {
 /* Style des mentions légales */
 .legalNotice {
   font-style: italic;
-  font-size: 1vw;
+  font-size: 2vw;
   text-align: center;
   padding-bottom: 1vw;
 }
 
-.legal-notice-link, .legal-notice-link:hover {
+.legal-notice-link {
   color: white;
   text-decoration: none;
   font-style: italic;
   font-weight: bold;
 }
 
+.legal-notice-link:hover {
+  font-weight: 900;
+  font-style: normal;
+  color: white;
+  text-decoration: none;
+}
+
 /* Style pour les écran de plus de 700px de largeur */
 @media screen and (min-width:700px) {
   .openingTimeTitle {
-    font-size: 1.1vw;
+    font-size: 1.5vw;
   }
   
   .openingTimeText {
-    font-size: 0.9vw;
+    font-size: 1.1vw;
   }
 
   .legalNotice {
@@ -366,14 +373,14 @@ input[type="text"], textarea {
 
 @media screen and (min-width:1200px) {
   .openingTimeTitle {
-    font-size: 0.8vw;
+    font-size: 1.4vw;
   }
   
   .openingTimeText {
-    font-size: 0.6vw;
+    font-size: 1vw;
   }
 
   .legalNotice {
-    font-size: 0.5vw;
+    font-size: 0.9vw;
   }
 }
