@@ -13,7 +13,21 @@
 
         <link rel="icon" href="{{ asset('pictures/favicon.ico') }}" />
 
-        <title>{% block title %}Bienvenue!{% endblock %}</title>
+        <title>{% block title %}VParrot, garagiste, site factice disponible à la vente{% endblock %}</title>
+
+        {# Open Graph pour les réseaux sociaux (Facebook, LinkedIn…) #}
+        <meta property="og:title" content="VParrot, garagiste, site factice disponible à la vente" />
+        <meta property="og:description" content="(Site factice) Spécialisé dans les réparations de la carosserie et de la mécanique des voitures ainsi que leur entretien régulier pour garantir leur performance et leur sécurité, V.Parrot est ouvert du lundi au samedi." />
+        <meta property="og:image" content="{{ app.request.schemeAndHttpHost ~ asset('pictures/logo2.png') }}"/>
+        <meta property="og:url" content="{{ app.request.uri }}" />
+        <meta property="og:type" content="website" />
+
+        {# Twitter Cards #}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="VParrot, garagiste, site factice disponible à la vente" />
+        <meta name="twitter:description" content="(Site factice) Spécialisé dans les réparations de la carosserie et de la mécanique des voitures ainsi que leur entretien régulier pour garantir leur performance et leur sécurité, V.Parrot est ouvert du lundi au samedi." />
+        <meta name="twitter:image" content="{{ app.request.schemeAndHttpHost ~ asset('pictures/logo2.png') }}"/>
+
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('styles') }}
